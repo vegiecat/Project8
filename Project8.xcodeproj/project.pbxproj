@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
 		68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */; };
 		68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */; };
 		68D71A6A1A1E4AF8004FC7DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A691A1E4AF8004FC7DA /* ViewController.swift */; };
@@ -27,6 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
+		68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		68D71A5F1A1E4AF8004FC7DA /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D71A631A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -45,6 +48,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -58,12 +62,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		68CD95581A1EFF4F00E5B7E4 /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+				68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */,
+				68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */,
+			);
+			name = FrameWorks;
+			path = Project8;
+			sourceTree = "<group>";
+		};
 		68D71A561A1E4AF8004FC7DA = {
 			isa = PBXGroup;
 			children = (
 				68D71A611A1E4AF8004FC7DA /* Project8 */,
 				68D71A7A1A1E4AF8004FC7DA /* Project8Tests */,
 				68D71A601A1E4AF8004FC7DA /* Products */,
+				68CD95581A1EFF4F00E5B7E4 /* FrameWorks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -342,9 +357,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project8",
+				);
 				INFOPLIST_FILE = Project8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Project8/FB-BridgeHeader.h";
 			};
 			name = Debug;
 		};
@@ -352,9 +372,14 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/Project8",
+				);
 				INFOPLIST_FILE = Project8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "Project8/FB-BridgeHeader.h";
 			};
 			name = Release;
 		};
@@ -411,6 +436,7 @@
 				68D71A831A1E4AF8004FC7DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		68D71A841A1E4AF8004FC7DA /* Build configuration list for PBXNativeTarget "Project8Tests" */ = {
 			isa = XCConfigurationList;
@@ -419,6 +445,7 @@
 				68D71A861A1E4AF8004FC7DA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
