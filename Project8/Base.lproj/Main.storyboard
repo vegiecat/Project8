@@ -135,9 +135,6 @@
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="Stc-ny-8Lo" kind="relationship" relationship="rootViewController" id="J22-PR-lHK"/>
-                    </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CGZ-6n-OKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
