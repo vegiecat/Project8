@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDD1A24970E0085E763 /* FBHelper.swift */; };
+		68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */; };
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
 		68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */; };
 		68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */; };
@@ -29,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		68538EDD1A24970E0085E763 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
+		68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientsTableViewController.swift; path = ../P8IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
 		68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		68D71A5F1A1E4AF8004FC7DA /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,9 +100,11 @@
 		68D71A611A1E4AF8004FC7DA /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */,
 				D021A7461A1F08DF0090900E /* 1 original.jpg */,
 				68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */,
 				68D71A691A1E4AF8004FC7DA /* ViewController.swift */,
+				68538EDD1A24970E0085E763 /* FBHelper.swift */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
 				68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */,
 				68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */,
@@ -235,7 +241,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				68D71A6A1A1E4AF8004FC7DA /* ViewController.swift in Sources */,
+				68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */,
 				68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */,
+				68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

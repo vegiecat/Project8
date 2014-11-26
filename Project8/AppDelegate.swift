@@ -17,12 +17,32 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
+
         FBLoginView.self
         FBProfilePictureView.self
         
+        let permission = ["public_profile"];
+
+        
+        if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
+            FBSession.openActiveSessionWithReadPermissions(
+                permission,
+                allowLoginUI: false,
+                completionHandler: {(session, state, error) -> Void in
+                self.sessionStateChanged(session, state: state, error: error)
+            })
+        }
+
+        
         return true
     }
+    
+    
+    func sessionStateChanged(session:FBSession, state:FBSessionState, error:NSError?) {
+        
+    }
+
+    
 
     func application(application: UIApplication,
         openURL url: NSURL,
