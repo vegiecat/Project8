@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6250" systemVersion="14A389" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="gG4-Kw-4mJ">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="6221" systemVersion="14B25" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="Gkm-G7-Uss">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6244"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="6213"/>
     </dependencies>
     <scenes>
         <!--View Controller-->
@@ -63,53 +63,96 @@
             </objects>
             <point key="canvasLocation" x="339" y="363"/>
         </scene>
-        <!--View Controller-->
+        <!--Recipe Editor Controller-->
+        <scene sceneID="obi-lK-UOk">
+            <objects>
+                <viewController storyboardIdentifier="RecipeEditorController" id="G4N-zh-qdM" customClass="RecipeEditorController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="nDS-XW-WTO"/>
+                        <viewControllerLayoutGuide type="bottom" id="9oo-nL-Hqu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="ggS-9R-Rnv">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="2db-bt-M9S">
+                                <rect key="frame" x="93" y="113" width="120" height="30"/>
+                                <state key="normal" title="Go to Step Editor">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <segue destination="8J6-ft-0E3" kind="show" id="1eA-sR-xlD"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-RN-ZuD">
+                                <rect key="frame" x="75" y="176" width="156" height="30"/>
+                                <state key="normal" title="Go to Ingredient Editor">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Kz-6w-k8y">
+                                <rect key="frame" x="100" y="237" width="107" height="30"/>
+                                <state key="normal" title="Enter basic info">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="XfX-Wx-d1b"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o6o-9I-FvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1923" y="1443"/>
+        </scene>
+        <!--Step Editor Controller-->
         <scene sceneID="wIn-ct-OAD">
             <objects>
-                <viewController id="Stc-ny-8Lo" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="StepEditorController" id="Stc-ny-8Lo" customClass="StepEditorController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="NoJ-CW-OLj"/>
                         <viewControllerLayoutGuide type="bottom" id="fKl-Sx-HiE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="c51-ff-bCo">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AfJ-ld-dCL">
-                                <rect key="frame" x="37" y="28" width="74" height="30"/>
+                                <rect key="frame" x="11" y="81" width="74" height="30"/>
                                 <state key="normal" title="Add Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Yna-by-8F2">
-                                <rect key="frame" x="138" y="28" width="99" height="30"/>
+                                <rect key="frame" x="111" y="81" width="99" height="30"/>
                                 <state key="normal" title="Change Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kTY-zm-60f">
-                                <rect key="frame" x="264" y="28" width="89" height="30"/>
+                                <rect key="frame" x="223" y="81" width="89" height="30"/>
                                 <state key="normal" title="Delete Photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="this is where step goes text. this is a scrollable text area. 144 characters limit maybe?" translatesAutoresizingMaskIntoConstraints="NO" id="MRd-zt-rVy">
-                                <rect key="frame" x="72" y="270" width="240" height="128"/>
+                                <rect key="frame" x="61" y="311" width="240" height="128"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1 original.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="2uO-EX-WeM">
-                                <rect key="frame" x="93" y="95" width="199" height="158"/>
+                                <rect key="frame" x="61" y="139" width="199" height="158"/>
                             </imageView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gqQ-3F-38q">
-                                <rect key="frame" x="51" y="406" width="125" height="30"/>
+                                <rect key="frame" x="98" y="409" width="125" height="30"/>
                                 <state key="normal" title="Create a new step">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fdr-An-Bwz">
-                                <rect key="frame" x="288" y="406" width="41" height="30"/>
+                                <rect key="frame" x="140" y="447" width="41" height="30"/>
                                 <state key="normal" title="Finish">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -118,11 +161,11 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                     <navigationItem key="navigationItem" id="2FA-3K-IFa"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ptf-90-bZM" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="546.5" y="1139.5"/>
+            <point key="canvasLocation" x="2657" y="896"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="tfA-e9-Vxe">
@@ -149,67 +192,67 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="KMg-wo-bjY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1442.5" y="1051.5"/>
+            <point key="canvasLocation" x="3764.5" y="1087.5"/>
         </scene>
-        <!--View Controller-->
+        <!--Step Editor Controller-->
         <scene sceneID="MZG-QL-9la">
             <objects>
-                <viewController id="Fyp-Gb-oYw" sceneMemberID="viewController">
+                <viewController id="Fyp-Gb-oYw" customClass="StepEditorController" customModule="Project8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YGx-yh-0j2"/>
                         <viewControllerLayoutGuide type="bottom" id="GNC-bH-kDW"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BUG-23-UOU">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="1 original.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="TzU-PO-lTx">
-                                <rect key="frame" x="58" y="76" width="258" height="226"/>
+                                <rect key="frame" x="58" y="118" width="258" height="226"/>
                             </imageView>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" text="RECIPE TEXT HERE" translatesAutoresizingMaskIntoConstraints="NO" id="FBF-L3-vCe">
-                                <rect key="frame" x="89" y="335" width="240" height="128"/>
+                                <rect key="frame" x="89" y="366" width="240" height="82"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="a8K-O9-Jcf">
-                                <rect key="frame" x="250" y="38" width="95" height="30"/>
+                                <rect key="frame" x="192" y="80" width="95" height="30"/>
                                 <state key="normal" title="change photo">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JKJ-9E-adZ">
-                                <rect key="frame" x="38" y="569" width="64" height="30"/>
+                                <rect key="frame" x="37" y="478" width="64" height="30"/>
                                 <state key="normal" title="next step">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="E76-NR-gE8">
-                                <rect key="frame" x="138" y="407" width="159" height="30"/>
+                                <rect key="frame" x="145" y="425" width="159" height="30"/>
                                 <state key="normal" title="add step after this step">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZlR-GA-j5T">
-                                <rect key="frame" x="32" y="38" width="96" height="30"/>
+                                <rect key="frame" x="30" y="80" width="96" height="30"/>
                                 <state key="normal" title="pick an image">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0WG-az-EIg">
-                                <rect key="frame" x="167" y="433" width="85" height="30"/>
+                                <rect key="frame" x="157" y="456" width="85" height="30"/>
                                 <state key="normal" title="remove step">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mYa-rA-Z2z">
-                                <rect key="frame" x="32" y="542" width="93" height="30"/>
+                                <rect key="frame" x="32" y="434" width="93" height="30"/>
                                 <state key="normal" title="previous step">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qV1-Cg-cY3">
-                                <rect key="frame" x="294" y="599" width="43" height="30"/>
+                                <rect key="frame" x="208" y="494" width="43" height="30"/>
                                 <state key="normal" title="DONE">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
@@ -217,11 +260,76 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7z-kh-hhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.5" y="1051.5"/>
+            <point key="canvasLocation" x="2382.5" y="1492.5"/>
+        </scene>
+        <!--Table View Controller-->
+        <scene sceneID="N3c-ZI-JnK">
+            <objects>
+                <tableViewController id="8J6-ft-0E3" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="459" sectionHeaderHeight="22" sectionFooterHeight="22" id="NB9-vp-j8h">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" rowHeight="459" id="SHx-Qp-Se3">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SHx-Qp-Se3" id="odz-tE-ccv">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="OA2-RS-vd8">
+                                            <rect key="frame" x="0.0" y="150" width="320" height="281"/>
+                                        </imageView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8Pj-dV-jOh">
+                                            <rect key="frame" x="38" y="112" width="93" height="30"/>
+                                            <state key="normal" title="Remove Step">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="tXA-mj-5Xg">
+                                            <rect key="frame" x="40" y="17" width="240" height="58"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kw0-Bu-jGN">
+                                            <rect key="frame" x="163" y="88" width="97" height="30"/>
+                                            <state key="normal" title="Move step Up">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="puW-g4-2t9">
+                                            <rect key="frame" x="33" y="83" width="103" height="30"/>
+                                            <state key="normal" title="Remove Image">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sOG-sm-Aug">
+                                            <rect key="frame" x="173" y="112" width="76" height="30"/>
+                                            <state key="normal" title="Pick image">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="8J6-ft-0E3" id="vA0-Co-Nyj"/>
+                            <outlet property="delegate" destination="8J6-ft-0E3" id="jey-nO-Z3K"/>
+                        </connections>
+                    </tableView>
+                    <toolbarItems/>
+                    <simulatedToolbarMetrics key="simulatedBottomBarMetrics"/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Cv0-fF-OC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2399" y="2196"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mRb-wh-fN0">
@@ -254,7 +362,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="1l0-ki-r8e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2307.5" y="1037.5"/>
+            <point key="canvasLocation" x="3931.5" y="1037.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="bbr-II-QDm">
@@ -287,7 +395,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="V2Z-mx-9F5" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.5" y="1031.5"/>
+            <point key="canvasLocation" x="4376.5" y="1031.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="atr-7J-NHx">
@@ -313,23 +421,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="HUw-Z9-lfi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3303" y="993"/>
-        </scene>
-        <!--Navigation Controller-->
-        <scene sceneID="kTW-Yg-QLf">
-            <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="PgP-NJ-EhZ" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="gq5-LJ-kge">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="CGZ-6n-OKT" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="330" y="1202"/>
+            <point key="canvasLocation" x="4927" y="993"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="999-Wz-O8N">
@@ -357,7 +449,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NG4-3C-IpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1448.5" y="1843.5"/>
+            <point key="canvasLocation" x="3072.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZdD-an-y17">
@@ -421,7 +513,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pa-G9-ySB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1864.5" y="1843.5"/>
+            <point key="canvasLocation" x="3488.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kxT-Kh-nWS">
@@ -485,7 +577,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlw-JN-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2266.5" y="1843.5"/>
+            <point key="canvasLocation" x="3890.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f8X-rk-vF6">
@@ -512,7 +604,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tAZ-Of-vaS" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.5" y="1031.5"/>
+            <point key="canvasLocation" x="4376.5" y="1031.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NLy-1V-W1b">
@@ -539,7 +631,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="77y-s4-S5v" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.5" y="1031.5"/>
+            <point key="canvasLocation" x="4376.5" y="1031.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="c2d-dt-cUw">
@@ -566,7 +658,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="RWo-sc-AR0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2752.5" y="1031.5"/>
+            <point key="canvasLocation" x="4376.5" y="1031.5"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1TX-Kv-kGu">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="Gkm-G7-Uss" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="B1q-Pp-s9r">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="G4N-zh-qdM" kind="relationship" relationship="rootViewController" id="h03-ig-Zpz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="SR8-vo-r5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1377" y="1443"/>
         </scene>
     </scenes>
     <resources>

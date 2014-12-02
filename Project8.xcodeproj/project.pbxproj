@@ -18,6 +18,9 @@
 		68D71A721A1E4AF8004FC7DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */; };
 		68D71A7E1A1E4AF8004FC7DA /* Project8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */; };
 		D021A7471A1F08DF0090900E /* 1 original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021A7461A1F08DF0090900E /* 1 original.jpg */; };
+		D0C1AACD1A2D8346001B7FB6 /* StepEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */; };
+		D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AACE1A2D95F8001B7FB6 /* Step.swift */; };
+		D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -47,6 +50,9 @@
 		68D71A7C1A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project8Tests.swift; sourceTree = "<group>"; };
 		D021A7461A1F08DF0090900E /* 1 original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 original.jpg"; sourceTree = "<group>"; };
+		D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditorController.swift; sourceTree = "<group>"; };
+		D0C1AACE1A2D95F8001B7FB6 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
+		D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -106,10 +112,13 @@
 				68D71A691A1E4AF8004FC7DA /* ViewController.swift */,
 				68538EDD1A24970E0085E763 /* FBHelper.swift */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
+				D0C1AACE1A2D95F8001B7FB6 /* Step.swift */,
 				68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */,
 				68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */,
 				68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */,
 				68D71A621A1E4AF8004FC7DA /* Supporting Files */,
+				D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */,
+				D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -242,8 +251,11 @@
 			files = (
 				68D71A6A1A1E4AF8004FC7DA /* ViewController.swift in Sources */,
 				68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */,
+				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
 				68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */,
+				D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */,
 				68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */,
+				D0C1AACD1A2D8346001B7FB6 /* StepEditorController.swift in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
