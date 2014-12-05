@@ -63,10 +63,10 @@
             </objects>
             <point key="canvasLocation" x="339" y="363"/>
         </scene>
-        <!--Recipe Editor Controller-->
+        <!--Recipe Editor View Controller-->
         <scene sceneID="obi-lK-UOk">
             <objects>
-                <viewController storyboardIdentifier="RecipeEditorController" id="G4N-zh-qdM" customClass="RecipeEditorController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="RecipeEditorController" id="G4N-zh-qdM" customClass="RecipeEditorViewController" customModule="Project8" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="nDS-XW-WTO"/>
                         <viewControllerLayoutGuide type="bottom" id="9oo-nL-Hqu"/>
@@ -81,7 +81,7 @@
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <segue destination="8J6-ft-0E3" kind="show" id="1eA-sR-xlD"/>
+                                    <segue destination="kuJ-vv-DcD" kind="show" id="fcX-hP-g4N"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-RN-ZuD">
@@ -99,12 +99,113 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
-                    <navigationItem key="navigationItem" id="XfX-Wx-d1b"/>
+                    <navigationItem key="navigationItem" id="XfX-Wx-d1b">
+                        <barButtonItem key="rightBarButtonItem" title="Item" id="PNR-v3-NQk"/>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="o6o-9I-FvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1923" y="1443"/>
+            <point key="canvasLocation" x="903" y="1443"/>
+        </scene>
+        <!--Title-->
+        <scene sceneID="lHj-vx-P2D">
+            <objects>
+                <tableViewController id="kuJ-vv-DcD" customClass="JLStepEditorTableViewController" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="422" sectionHeaderHeight="22" sectionFooterHeight="22" id="k4q-oT-i7O">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="StepCell" rowHeight="422" id="bQv-U1-t9t" customClass="JLStepTableViewCell">
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="bQv-U1-t9t" id="BYO-Mz-JuB">
+                                    <autoresizingMask key="autoresizingMask"/>
+                                    <subviews>
+                                        <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" editable="NO" selectable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GBk-0d-SET">
+                                            <rect key="frame" x="0.0" y="278" width="240" height="120"/>
+                                            <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                            <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                            <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                            <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                        </textView>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rJf-gT-4xk">
+                                            <rect key="frame" x="0.0" y="278" width="240" height="120"/>
+                                            <state key="normal">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                        <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qmI-t3-HbF">
+                                            <rect key="frame" x="0.0" y="30" width="240" height="240"/>
+                                            <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="48"/>
+                                            <state key="normal" title="+">
+                                                <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                            </state>
+                                        </button>
+                                    </subviews>
+                                </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="stepImageButton" destination="qmI-t3-HbF" id="xQZ-0J-AWu"/>
+                                    <outlet property="stepTextEditButton" destination="rJf-gT-4xk" id="1h9-dM-98T"/>
+                                    <outlet property="stepTextView" destination="GBk-0d-SET" id="C7X-gc-87U"/>
+                                </connections>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="kuJ-vv-DcD" id="sGS-D7-VLJ"/>
+                            <outlet property="delegate" destination="kuJ-vv-DcD" id="RbW-cl-7qf"/>
+                        </connections>
+                    </tableView>
+                    <navigationItem key="navigationItem" title="Title" id="Tni-kb-tOi">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="vus-IA-iCg">
+                            <connections>
+                                <action selector="addStepButtonPressed:" destination="kuJ-vv-DcD" id="0iN-2B-hog"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <segue destination="L13-Nm-FbT" kind="presentation" identifier="showStepTextEntry" id="7cT-OC-Y6y"/>
+                    </connections>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="67Y-KV-Jzd" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1446" y="1443"/>
+        </scene>
+        <!--Multi Line Text Entry View Controller-->
+        <scene sceneID="6tt-Yx-Va5">
+            <objects>
+                <viewController id="SmC-bY-Bga" customClass="JLMultiLineTextEntryViewController" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="iFO-Rh-0AC"/>
+                        <viewControllerLayoutGuide type="bottom" id="AcA-wG-UE6"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="S8Q-ZU-gfB">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="aUR-1g-gW7">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="285"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                            </textView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="tOa-MP-Amm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="done" id="F1e-NC-Y0w"/>
+                    </navigationItem>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <connections>
+                        <outlet property="textView" destination="aUR-1g-gW7" id="AhE-eX-6I9"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="l2b-Fr-k5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2199" y="1443"/>
         </scene>
         <!--Step Editor Controller-->
         <scene sceneID="wIn-ct-OAD">
@@ -264,7 +365,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="y7z-kh-hhW" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2382.5" y="1492.5"/>
+            <point key="canvasLocation" x="3194" y="1492"/>
         </scene>
         <!--Table View Controller-->
         <scene sceneID="N3c-ZI-JnK">
@@ -329,7 +430,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Cv0-fF-OC0" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2399" y="2196"/>
+            <point key="canvasLocation" x="3211" y="2196"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="mRb-wh-fN0">
@@ -449,7 +550,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="NG4-3C-IpY" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3072.5" y="1843.5"/>
+            <point key="canvasLocation" x="3884.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="ZdD-an-y17">
@@ -513,7 +614,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Pa-G9-ySB" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3488.5" y="1843.5"/>
+            <point key="canvasLocation" x="4300.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="kxT-Kh-nWS">
@@ -577,7 +678,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Jlw-JN-BpL" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3890.5" y="1843.5"/>
+            <point key="canvasLocation" x="4702.5" y="1843.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="f8X-rk-vF6">
@@ -677,7 +778,26 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="SR8-vo-r5R" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1377" y="1443"/>
+            <point key="canvasLocation" x="507" y="1443"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="ZRl-uz-Qdz">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="L13-Nm-FbT" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Mb8-1Z-pBF">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="SmC-bY-Bga" kind="relationship" relationship="rootViewController" id="vUm-hH-fAz"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="MOS-yK-e4U" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1807" y="1443"/>
         </scene>
     </scenes>
     <resources>

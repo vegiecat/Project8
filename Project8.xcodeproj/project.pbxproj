@@ -12,13 +12,16 @@
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
 		68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */; };
 		68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */; };
-		68D71A6A1A1E4AF8004FC7DA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A691A1E4AF8004FC7DA /* ViewController.swift */; };
 		68D71A6D1A1E4AF8004FC7DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */; };
 		68D71A6F1A1E4AF8004FC7DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */; };
 		68D71A721A1E4AF8004FC7DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */; };
 		68D71A7E1A1E4AF8004FC7DA /* Project8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */; };
 		D021A7471A1F08DF0090900E /* 1 original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021A7461A1F08DF0090900E /* 1 original.jpg */; };
-		D0C1AACD1A2D8346001B7FB6 /* StepEditorController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */; };
+		D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AB1A31660900A05F0B /* JLMultiLineTextEntryViewController.m */; };
+		D0A125B31A31660900A05F0B /* JLStepEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AD1A31660900A05F0B /* JLStepEditorTableViewController.m */; };
+		D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */; };
+		D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */; };
+		D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A126431A31965800A05F0B /* TemplateTableViewController.swift */; };
 		D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AACE1A2D95F8001B7FB6 /* Step.swift */; };
 		D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */; };
 /* End PBXBuildFile section */
@@ -42,7 +45,6 @@
 		68D71A631A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		68D71A671A1E4AF8004FC7DA /* Project8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project8.xcdatamodel; sourceTree = "<group>"; };
-		68D71A691A1E4AF8004FC7DA /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		68D71A6C1A1E4AF8004FC7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68D71A711A1E4AF8004FC7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -50,7 +52,16 @@
 		68D71A7C1A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project8Tests.swift; sourceTree = "<group>"; };
 		D021A7461A1F08DF0090900E /* 1 original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 original.jpg"; sourceTree = "<group>"; };
-		D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StepEditorController.swift; sourceTree = "<group>"; };
+		D0A125AA1A31660900A05F0B /* JLMultiLineTextEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMultiLineTextEntryViewController.h; sourceTree = "<group>"; };
+		D0A125AB1A31660900A05F0B /* JLMultiLineTextEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMultiLineTextEntryViewController.m; sourceTree = "<group>"; };
+		D0A125AC1A31660900A05F0B /* JLStepEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLStepEditorTableViewController.h; sourceTree = "<group>"; };
+		D0A125AD1A31660900A05F0B /* JLStepEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLStepEditorTableViewController.m; sourceTree = "<group>"; };
+		D0A125AE1A31660900A05F0B /* JLStepTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLStepTableViewCell.h; sourceTree = "<group>"; };
+		D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLStepTableViewCell.m; sourceTree = "<group>"; };
+		D0A125B61A31668800A05F0B /* JLIngredientEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLIngredientEditorTableViewController.h; path = "Project8/JL Ingredient Editor/JLIngredientEditorTableViewController.h"; sourceTree = SOURCE_ROOT; };
+		D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLIngredientEditorTableViewController.m; path = "Project8/JL Ingredient Editor/JLIngredientEditorTableViewController.m"; sourceTree = SOURCE_ROOT; };
+		D0A125BD1A31681700A05F0B /* Project8-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Project8-Bridge-Header.h"; sourceTree = SOURCE_ROOT; };
+		D0A126431A31965800A05F0B /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
 		D0C1AACE1A2D95F8001B7FB6 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -106,10 +117,10 @@
 		68D71A611A1E4AF8004FC7DA /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				D0A125A91A31660900A05F0B /* JL Step Editor */,
 				68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */,
 				D021A7461A1F08DF0090900E /* 1 original.jpg */,
 				68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */,
-				68D71A691A1E4AF8004FC7DA /* ViewController.swift */,
 				68538EDD1A24970E0085E763 /* FBHelper.swift */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
 				D0C1AACE1A2D95F8001B7FB6 /* Step.swift */,
@@ -117,8 +128,8 @@
 				68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */,
 				68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */,
 				68D71A621A1E4AF8004FC7DA /* Supporting Files */,
-				D0C1AACC1A2D8346001B7FB6 /* StepEditorController.swift */,
 				D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */,
+				D0A126431A31965800A05F0B /* TemplateTableViewController.swift */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -126,6 +137,7 @@
 		68D71A621A1E4AF8004FC7DA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D0A125BD1A31681700A05F0B /* Project8-Bridge-Header.h */,
 				68D71A631A1E4AF8004FC7DA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -146,6 +158,21 @@
 				68D71A7C1A1E4AF8004FC7DA /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D0A125A91A31660900A05F0B /* JL Step Editor */ = {
+			isa = PBXGroup;
+			children = (
+				D0A125AA1A31660900A05F0B /* JLMultiLineTextEntryViewController.h */,
+				D0A125AB1A31660900A05F0B /* JLMultiLineTextEntryViewController.m */,
+				D0A125AC1A31660900A05F0B /* JLStepEditorTableViewController.h */,
+				D0A125AD1A31660900A05F0B /* JLStepEditorTableViewController.m */,
+				D0A125AE1A31660900A05F0B /* JLStepTableViewCell.h */,
+				D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */,
+				D0A125B61A31668800A05F0B /* JLIngredientEditorTableViewController.h */,
+				D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */,
+			);
+			path = "JL Step Editor";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -249,13 +276,16 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				68D71A6A1A1E4AF8004FC7DA /* ViewController.swift in Sources */,
+				D0A125B31A31660900A05F0B /* JLStepEditorTableViewController.m in Sources */,
 				68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */,
+				D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */,
 				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
 				68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */,
 				D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */,
+				D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */,
 				68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */,
-				D0C1AACD1A2D8346001B7FB6 /* StepEditorController.swift in Sources */,
+				D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */,
+				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -388,7 +418,7 @@
 				INFOPLIST_FILE = Project8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Project8/FB-BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Project8/Project8-Bridge-Header.h";
 			};
 			name = Debug;
 		};
@@ -403,7 +433,7 @@
 				INFOPLIST_FILE = Project8/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_OBJC_BRIDGING_HEADER = "Project8/FB-BridgeHeader.h";
+				SWIFT_OBJC_BRIDGING_HEADER = "Project8/Project8-Bridge-Header.h";
 			};
 			name = Release;
 		};
