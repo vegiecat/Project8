@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		683D5BE81A36B6BC00019906 /* P8CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */; };
+		683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BEA1A36C32D00019906 /* Project8.xcdatamodeld */; };
+		683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */; };
+		683D5BF51A36C41A00019906 /* P8RecipeTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */; };
+		683D5BF61A36C41A00019906 /* P8RecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BF01A36C41A00019906 /* P8RecipeTableViewCell.swift */; };
+		683D5BF71A36C41A00019906 /* P8RecipeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BF11A36C41A00019906 /* P8RecipeEditorViewController.swift */; };
+		683D5BF81A36C41A00019906 /* P8RecipeDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */; };
+		683D5BF91A36C41A00019906 /* P8RecipeDetailTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */; };
+		683D5BFA1A36C41A00019906 /* P8RecipeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BF41A36C41A00019906 /* P8RecipeDetailTableViewCell.swift */; };
+		683D5C021A36C64C00019906 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C011A36C64C00019906 /* Recipe.swift */; };
+		683D5C041A36C65C00019906 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C031A36C65C00019906 /* Ingredient.swift */; };
+		683D5C061A36C74900019906 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C051A36C74900019906 /* Step.swift */; };
 		68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDD1A24970E0085E763 /* FBHelper.swift */; };
 		68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */; };
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
 		68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */; };
-		68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */; };
 		68D71A6D1A1E4AF8004FC7DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */; };
 		68D71A6F1A1E4AF8004FC7DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */; };
 		68D71A721A1E4AF8004FC7DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */; };
@@ -22,7 +33,6 @@
 		D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */; };
 		D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */; };
 		D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A126431A31965800A05F0B /* TemplateTableViewController.swift */; };
-		D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AACE1A2D95F8001B7FB6 /* Step.swift */; };
 		D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */; };
 /* End PBXBuildFile section */
 
@@ -37,6 +47,18 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = P8CoreDataHelper.swift; sourceTree = "<group>"; };
+		683D5BEB1A36C32D00019906 /* Project8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project8.xcdatamodel; sourceTree = "<group>"; };
+		683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientEditorTableViewController.swift; path = "JL Step Editor/P8IngredientEditorTableViewController.swift"; sourceTree = "<group>"; };
+		683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeTableViewController.swift; path = "JL Step Editor/P8RecipeTableViewController.swift"; sourceTree = "<group>"; };
+		683D5BF01A36C41A00019906 /* P8RecipeTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeTableViewCell.swift; path = "JL Step Editor/P8RecipeTableViewCell.swift"; sourceTree = "<group>"; };
+		683D5BF11A36C41A00019906 /* P8RecipeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeEditorViewController.swift; path = "JL Step Editor/P8RecipeEditorViewController.swift"; sourceTree = "<group>"; };
+		683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailViewController.swift; path = "JL Step Editor/P8RecipeDetailViewController.swift"; sourceTree = "<group>"; };
+		683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailTableViewController.swift; path = "JL Step Editor/P8RecipeDetailTableViewController.swift"; sourceTree = "<group>"; };
+		683D5BF41A36C41A00019906 /* P8RecipeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailTableViewCell.swift; path = "JL Step Editor/P8RecipeDetailTableViewCell.swift"; sourceTree = "<group>"; };
+		683D5C011A36C64C00019906 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
+		683D5C031A36C65C00019906 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ingredient.swift; sourceTree = "<group>"; };
+		683D5C051A36C74900019906 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		68538EDD1A24970E0085E763 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FBHelper.swift; sourceTree = "<group>"; };
 		68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientsTableViewController.swift; path = ../P8IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
@@ -44,7 +66,6 @@
 		68D71A5F1A1E4AF8004FC7DA /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D71A631A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		68D71A671A1E4AF8004FC7DA /* Project8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project8.xcdatamodel; sourceTree = "<group>"; };
 		68D71A6C1A1E4AF8004FC7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		68D71A711A1E4AF8004FC7DA /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
@@ -62,7 +83,6 @@
 		D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLIngredientEditorTableViewController.m; path = "Project8/JL Ingredient Editor/JLIngredientEditorTableViewController.m"; sourceTree = SOURCE_ROOT; };
 		D0A125BD1A31681700A05F0B /* Project8-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Project8-Bridge-Header.h"; sourceTree = SOURCE_ROOT; };
 		D0A126431A31965800A05F0B /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
-		D0C1AACE1A2D95F8001B7FB6 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Step.swift; sourceTree = "<group>"; };
 		D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeEditorViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -85,6 +105,53 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		683D5BE91A36B6C400019906 /* Helper */ = {
+			isa = PBXGroup;
+			children = (
+				683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */,
+				68538EDD1A24970E0085E763 /* FBHelper.swift */,
+			);
+			name = Helper;
+			sourceTree = "<group>";
+		};
+		683D5BFB1A36C43800019906 /* RecipeTable */ = {
+			isa = PBXGroup;
+			children = (
+				683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */,
+				683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */,
+				683D5BF41A36C41A00019906 /* P8RecipeDetailTableViewCell.swift */,
+				683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */,
+				683D5BF01A36C41A00019906 /* P8RecipeTableViewCell.swift */,
+			);
+			name = RecipeTable;
+			sourceTree = "<group>";
+		};
+		683D5BFC1A36C45500019906 /* RecipeEditor */ = {
+			isa = PBXGroup;
+			children = (
+				683D5BF11A36C41A00019906 /* P8RecipeEditorViewController.swift */,
+			);
+			name = RecipeEditor;
+			sourceTree = "<group>";
+		};
+		683D5BFD1A36C4E400019906 /* IngredientEditor */ = {
+			isa = PBXGroup;
+			children = (
+				683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */,
+			);
+			name = IngredientEditor;
+			sourceTree = "<group>";
+		};
+		683D5BFE1A36C51800019906 /* NSManaged */ = {
+			isa = PBXGroup;
+			children = (
+				683D5C031A36C65C00019906 /* Ingredient.swift */,
+				683D5C011A36C64C00019906 /* Recipe.swift */,
+				683D5C051A36C74900019906 /* Step.swift */,
+			);
+			name = NSManaged;
+			sourceTree = "<group>";
+		};
 		68CD95581A1EFF4F00E5B7E4 /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
@@ -117,16 +184,21 @@
 		68D71A611A1E4AF8004FC7DA /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
-				D0A125A91A31660900A05F0B /* JL Step Editor */,
-				68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */,
-				D021A7461A1F08DF0090900E /* 1 original.jpg */,
-				68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */,
-				68538EDD1A24970E0085E763 /* FBHelper.swift */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
-				D0C1AACE1A2D95F8001B7FB6 /* Step.swift */,
+				D0A125A91A31660900A05F0B /* JL Step Editor */,
+				683D5BFB1A36C43800019906 /* RecipeTable */,
+				683D5BFC1A36C45500019906 /* RecipeEditor */,
+				683D5BFD1A36C4E400019906 /* IngredientEditor */,
+				683D5BE91A36B6C400019906 /* Helper */,
+				683D5BFE1A36C51800019906 /* NSManaged */,
+				68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */,
+				68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */,
+				D0A125B61A31668800A05F0B /* JLIngredientEditorTableViewController.h */,
+				D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */,
 				68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */,
+				D021A7461A1F08DF0090900E /* 1 original.jpg */,
 				68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */,
-				68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */,
+				683D5BEA1A36C32D00019906 /* Project8.xcdatamodeld */,
 				68D71A621A1E4AF8004FC7DA /* Supporting Files */,
 				D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */,
 				D0A126431A31965800A05F0B /* TemplateTableViewController.swift */,
@@ -169,8 +241,6 @@
 				D0A125AD1A31660900A05F0B /* JLStepEditorTableViewController.m */,
 				D0A125AE1A31660900A05F0B /* JLStepTableViewCell.h */,
 				D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */,
-				D0A125B61A31668800A05F0B /* JLIngredientEditorTableViewController.h */,
-				D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */,
 			);
 			path = "JL Step Editor";
 			sourceTree = "<group>";
@@ -276,17 +346,27 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				683D5BE81A36B6BC00019906 /* P8CoreDataHelper.swift in Sources */,
 				D0A125B31A31660900A05F0B /* JLStepEditorTableViewController.m in Sources */,
+				683D5C041A36C65C00019906 /* Ingredient.swift in Sources */,
 				68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */,
+				683D5BF51A36C41A00019906 /* P8RecipeTableViewController.swift in Sources */,
+				683D5BF91A36C41A00019906 /* P8RecipeDetailTableViewController.swift in Sources */,
 				D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */,
 				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
-				68D71A681A1E4AF8004FC7DA /* Project8.xcdatamodeld in Sources */,
-				D0C1AACF1A2D95F8001B7FB6 /* Step.swift in Sources */,
+				683D5BF81A36C41A00019906 /* P8RecipeDetailViewController.swift in Sources */,
+				683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */,
 				D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */,
+				683D5BFA1A36C41A00019906 /* P8RecipeDetailTableViewCell.swift in Sources */,
 				68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */,
+				683D5BF61A36C41A00019906 /* P8RecipeTableViewCell.swift in Sources */,
 				D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */,
+				683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */,
 				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
+				683D5C061A36C74900019906 /* Step.swift in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
+				683D5BF71A36C41A00019906 /* P8RecipeEditorViewController.swift in Sources */,
+				683D5C021A36C64C00019906 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -504,12 +584,12 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		68D71A661A1E4AF8004FC7DA /* Project8.xcdatamodeld */ = {
+		683D5BEA1A36C32D00019906 /* Project8.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				68D71A671A1E4AF8004FC7DA /* Project8.xcdatamodel */,
+				683D5BEB1A36C32D00019906 /* Project8.xcdatamodel */,
 			);
-			currentVersion = 68D71A671A1E4AF8004FC7DA /* Project8.xcdatamodel */;
+			currentVersion = 683D5BEB1A36C32D00019906 /* Project8.xcdatamodel */;
 			path = Project8.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;

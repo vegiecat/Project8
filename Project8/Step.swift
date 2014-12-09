@@ -2,19 +2,19 @@
 //  Step.swift
 //  Project8
 //
-//  Created by Justin Lee on 12/1/14.
+//  Created by Vegiecat Studio on 12/9/14.
 //  Copyright (c) 2014 Vegiecat Studio. All rights reserved.
 //
 
-import UIKit
+import Foundation
+import CoreData
 
-class Step: NSObject {
-    
-    var stepImage : UIImage?
-    var stepText : String?
-    var stepOrder : Int?
-    
-    override init(){
-        super.init()
-    }
+@objc(Step)
+class Step: NSManagedObject {
+
+    @NSManaged var stepText: String
+    @NSManaged var id: String
+    @NSManaged var stepImage: NSData
+    @NSManaged var recipe: Recipe
+
 }
