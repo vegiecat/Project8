@@ -132,6 +132,15 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
             temp.dataSource = self.dataSource
         }
         
+        if segue.identifier == "showRecipeEditor" {
+            let stepEditor = segue.destinationViewController as JLStepEditorTableViewController
+            stepEditor.datasource = self.dataSource
+
+        }
+
+        
+        
+
 
     }
 

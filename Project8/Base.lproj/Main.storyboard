@@ -80,9 +80,6 @@
                                 <state key="normal" title="Go to Step Editor">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="kuJ-vv-DcD" kind="show" id="fcX-hP-g4N"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="4j3-RN-ZuD">
                                 <rect key="frame" x="75" y="176" width="156" height="30"/>
@@ -966,6 +963,9 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="75" y="389" width="40" height="30"/>
                                 </variation>
+                                <connections>
+                                    <segue destination="kuJ-vv-DcD" kind="show" identifier="showStepEditor" id="vCv-zs-MsQ"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
@@ -1138,6 +1138,6 @@
     </scenes>
     <resources>
         <image name="1 original.jpg" width="631" height="471"/>
-        <image name="dummy" width="631" height="471"/>
+        <image name="dummy" width="75" height="75"/>
     </resources>
 </document>

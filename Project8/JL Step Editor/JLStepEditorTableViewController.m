@@ -36,21 +36,20 @@
 - (IBAction)addStepButtonPressed:(id)sender {
     
     //add new step to model
-    Step *step1 = [[Step alloc] init];
-    step1.stepText = @"";
-    [self.steps addObject:step1];
-    
-    //if we want to add first row [self.steps insertObject:step1 atIndex:0];
-    //NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
-    
-    [self updateDatasource];
-    
-    //add new row to table
-    NSIndexPath *lastRow = [NSIndexPath indexPathForRow:self.steps.count-1 inSection:0];
-    [self.tableView insertRowsAtIndexPaths:@[lastRow] withRowAnimation:UITableViewRowAnimationAutomatic];
-    
-    [self.tableView scrollToRowAtIndexPath:lastRow atScrollPosition:UITableViewScrollPositionTop animated:YES];
-    
+    Step *step1 = [self.datasource newStepForEditor:self];
+    if (step1) {
+        step1.stepText = @"";
+        [self.steps addObject:step1];
+        
+        //if we want to add first row [self.steps insertObject:step1 atIndex:0];
+        //NSIndexPath *firstRow = [NSIndexPath indexPathForRow:0 inSection:0];
+        
+        //add new row to table
+        NSIndexPath *lastRow = [NSIndexPath indexPathForRow:self.steps.count-1 inSection:0];
+        [self.tableView insertRowsAtIndexPaths:@[lastRow] withRowAnimation:UITableViewRowAnimationAutomatic];
+        
+        [self.tableView scrollToRowAtIndexPath:lastRow atScrollPosition:UITableViewScrollPositionTop animated:YES];
+    }
 }
 
 
@@ -116,7 +115,7 @@
     //PREP IMAGE
     UIImage *stepImage = nil;
     if (aStep.stepImage != nil) {
-        stepImage = aStep.stepImage;
+        //stepImage = aStep.stepImage;
     }
     
     //MAP DATA OBJECT TO CELL
@@ -139,13 +138,18 @@
 - (void)tableView:(UITableView *)tableView commitEditingStyle:(UITableViewCellEditingStyle)editingStyle forRowAtIndexPath:(NSIndexPath *)indexPath {
     if (editingStyle == UITableViewCellEditingStyleDelete) {
         
-        // Delete the row from the data source
+        //Get the step to be deleted
+        Step *deletedStep = self.steps[indexPath.row];
+        
+        //delete step from data source
+        [self.datasource stepEditor:self didDeleteStep:deletedStep];
+        
+        //delete step from table VC data source
         [self.steps removeObjectAtIndex:indexPath.row];
         
         //Update table view
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
 
-        [self updateDatasource];
     }
     
     /*
@@ -233,7 +237,7 @@
     Step *aStep = self.steps[_selectedIndexPath.row];
     aStep.stepText = enteredText;
 
-    [self updateDatasource];
+    [self.datasource stepEditor:self didEditStep:aStep];
 
     [self.tableView reloadData];
     
@@ -337,9 +341,9 @@
         
         //UPDATE THE MODEL
         Step *aStep = self.steps[_selectedIndexPath.row];
-        aStep.stepImage = imageToSave;
-
-        [self updateDatasource];
+        //aStep.stepImage = imageToSave;
+        
+        [self.datasource stepEditor:self didEditStep:aStep];
         
         [self.tableView reloadData];
         [[self parentViewController] dismissViewControllerAnimated:YES completion:NULL];

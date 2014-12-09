@@ -8,7 +8,7 @@
 
 import UIKit
 
-class RecipeEditorViewController: UIViewController,JLStepEditorTableViewControllerDatasource {
+class RecipeEditorViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -55,7 +55,7 @@ class RecipeEditorViewController: UIViewController,JLStepEditorTableViewControll
         // Pass the selected object to the new view controller.
         
         let stepEditor = segue.destinationViewController as JLStepEditorTableViewController
-        stepEditor.datasource = self
+        //stepEditor.datasource = self
         
         
     }

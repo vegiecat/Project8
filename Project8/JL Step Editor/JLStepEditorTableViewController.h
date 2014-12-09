@@ -8,12 +8,27 @@
 
 #import <UIKit/UIKit.h>
 
+
 @class JLStepEditorTableViewController;
+@class Step;
 
 @protocol JLStepEditorTableViewControllerDatasource <NSObject>
 
+//called when the view controller is getting set up
 - (NSArray *)stepsArrayForStepEditor:(JLStepEditorTableViewController *)stepEditor;
+
+//called when a new step is added
+- (Step *)newStepForEditor:(JLStepEditorTableViewController *)stepEditor;
+
+//single edits to an individual step
+- (void)stepEditor:(JLStepEditorTableViewController *)stepEditor didEditStep:(Step *)editedStep;
+
+//happens when a step is deleted
+- (void)stepEditor:(JLStepEditorTableViewController *)stepEditor didDeleteStep:(Step *)editedStep;
+
+//called when step order is changed
 - (void)stepEditor:(JLStepEditorTableViewController *)stepEditor didUpdateStepsArray:(NSArray *)stepsArray;
+
 
 @end
 
