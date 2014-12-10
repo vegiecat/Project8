@@ -13,7 +13,7 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
     
     var recipeOfInterest:Recipe?
     let globalMOC = managedObjectContext()
-    
+    let P8CoreDataHelperDebugMode = true
     override init(){
         super.init()
         
@@ -88,11 +88,12 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         recipeOfInterest = recipeSelected
     }
     
-    //MARK recipeDetail
+    //MARK: recipeDetail
     func recipeForRecipeDetail(recipeDetail:P8RecipeDetailTableViewController)->Recipe{
         println("----recipeForRecipeEditor----")
         checkCurrentRecipe()
         return recipeOfInterest!
+
     }
     
     //MARK: stepEditor
@@ -137,13 +138,24 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
     }
 
     
-    //MARK recipeEditor
+    //MARK: recipeEditor
+    //addNewRecipe is a hack to make the flow work right now
+    func addNewRecipe(){
+        self.recipeOfInterest = nil
+    }
+    
     func recipeForRecipeEditor(recipeEditor:P8RecipeEditorViewController)->Recipe{
         println("----recipeForRecipeEditor----")
         checkCurrentRecipe()
-        println(self.recipeOfInterest)
-        self.recipeOfInterest = self.newRecipe()
-        self.recipeOfInterest!.name = "Recipe Name"
+        if recipeOfInterest != nil{
+            if recipeOfInterest!.name != "Recipe Name"{
+                
+            }
+        }else{
+            self.recipeOfInterest = self.newRecipe()
+            self.recipeOfInterest!.name = "Recipe Name"
+        }
+
         
         //self.currentEditingRecipe = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
         /*
@@ -184,7 +196,7 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
     }
     
     
-    //MARK ingredientEditor
+    //MARK: ingredientEditor
 
     func ingredientsArrayForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->[Ingredient]{
         println("----ingredientsArrayForIngredientEditor----")
@@ -291,29 +303,31 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
     
     //MARK Helper Classes
     func checkCurrentRecipe(){
-        if self.recipeOfInterest != nil{
-            println("current EditingRecipe Is Still Here")
-            println("Name:\(recipeOfInterest?.name)")
-            if recipeOfInterest?.ingredient.count > 0{
-                println("Ingredient:")
-                for ingredient in recipeOfInterest!.ingredient.array{
-                    println(ingredient.name)
+        if self.P8CoreDataHelperDebugMode{
+            if self.recipeOfInterest != nil{
+                println("current EditingRecipe Is Still Here")
+                println("Name:\(recipeOfInterest?.name)")
+                if recipeOfInterest?.ingredient.count > 0{
+                    println("Ingredient:")
+                    for ingredient in recipeOfInterest!.ingredient.array{
+                        println(ingredient.name)
+                    }
+                }else{
+                    println("EditingRecipe has no ingredients")
                 }
-            }else{
-                println("EditingRecipe has no ingredients")
-            }
-            if recipeOfInterest?.step.count > 0{
-                println("Step:")
-                for step in recipeOfInterest!.step.array{
-                    let tempStep = step as Step
-                    println(tempStep.stepText)
+                if recipeOfInterest?.step.count > 0{
+                    println("Step:")
+                    for step in recipeOfInterest!.step.array{
+                        let tempStep = step as Step
+                        println(tempStep.stepText)
+                    }
+                }else{
+                    println("EditingRecipe has no steps")
                 }
+                
             }else{
-                println("EditingRecipe has no steps")
+                println("current EditingRecipe Is nil")
             }
-
-        }else{
-            println("current EditingRecipe Is nil")
         }
 
     }

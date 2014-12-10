@@ -11,6 +11,7 @@ import UIKit
 class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelectionDelegate {
 
     var recipe:Recipe?
+    var ingredients:[Ingredient]?
     var dataSource:P8CoreDataHelper?
     //for testing segue
     var imFrom:String = "I don't know where I'm from."
@@ -30,6 +31,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
         //Load the Recipe of Interest from the DataSource
         if dataSource != nil {
             self.recipe = dataSource!.recipeForRecipeDetail(self)
+            self.ingredients = self.recipe?.ingredient.array as [Ingredient]?
         }
 
     }
@@ -54,20 +56,61 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        if section == 1{
-            return 1
-        }else if section == 0{
-            if recipe != nil{
-                return recipe!.ingredient.count
-            }else{
-                return 0
-            }
+        var numberOfRows = 0
+        if section == 0{
+            numberOfRows = 1
+            println("This is Section#\(section)")
         }
-        return 0
+        if section == 1{
+            numberOfRows = self.ingredients!.count
+            println("This is Section#\(section)")
+        }
+
+        
+        return numberOfRows
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         
+        var cell = UITableViewCell()
+        let recipe:Recipe = self.recipe!
+
+        if indexPath.section == 0{
+            let recipeCell:P8RecipeDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("RecipeDetailCell", forIndexPath: indexPath) as P8RecipeDetailTableViewCell
+            
+            
+            let recipeCoverPhotoData:NSData = recipe.coverPhoto
+            let recipeCoverPhoto:UIImage? = UIImage(data: recipeCoverPhotoData)?
+            
+            var recipeCoverPhotoFrame:CGRect = recipeCell.recipeCoverPhoto.frame
+            recipeCoverPhotoFrame.size = CGSizeMake(75, 75)
+            recipeCell.recipeCoverPhoto.frame = recipeCoverPhotoFrame
+            recipeCell.recipeCoverPhoto.image = recipeCoverPhoto
+            
+            println(recipe.name)
+            recipeCell.recipeName.text = recipe.name
+            cell = recipeCell
+            //manually setting the row height, should be a smarter way
+            self.tableView.rowHeight = 311
+
+        }
+        if indexPath.section == 1{
+            
+            var ingredientCell = tableView.dequeueReusableCellWithIdentifier("IngredientDetailCell", forIndexPath: indexPath) as P8IngredientDetailTableViewCell
+            
+            let ingredients = self.ingredients
+            let ingredientText = ingredients![indexPath.row].name
+            
+            ingredientCell.textLabel!.text = ingredientText
+            
+            cell=ingredientCell
+            //manually setting the row height, should be a smarter way
+            self.tableView.rowHeight = 50
+
+        }
+        
+        
+        /*
         var cell = tableView.dequeueReusableCellWithIdentifier("IngredientDetailCell", forIndexPath: indexPath) as UITableViewCell
         var counter1 = 1
         var counter0 = 1
@@ -97,6 +140,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
             */
             return recipeCell
         }
+        */
 
         return cell
         
@@ -137,14 +181,15 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     }
     */
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using [segue destinationViewController].
-        // Pass the selected object to the new view controller.
+        if segue.identifier == "showRecipeEditor" {
+            let recipeEditor = segue.destinationViewController as P8RecipeEditorViewController
+            recipeEditor.imFrom = "I came from Recipe Detail"
+            recipeEditor.dataSource = self.dataSource
+        }
     }
-    */
 
 }

@@ -43,6 +43,17 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
             self.recipe = dataSource!.recipeForRecipeEditor(self)
         }
         
+        //Set the image and name
+        if recipe!.name != "Recipe Name"{
+            self.recipeName.text = recipe!.name
+            let recipeCoverPhotoData:NSData = recipe!.coverPhoto
+            let recipeCoverPhoto:UIImage? = UIImage(data: recipeCoverPhotoData)?
+            
+            var recipeCoverPhotoFrame:CGRect = self.recipeCoverPhoto.frame
+            recipeCoverPhotoFrame.size = CGSizeMake(75, 75)
+            self.recipeCoverPhoto.frame = recipeCoverPhotoFrame
+            self.recipeCoverPhoto.image = recipeCoverPhoto
+        }
         
         
         // Do any additional setup after loading the view.

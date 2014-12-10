@@ -844,7 +844,7 @@
                                     <outlet property="recipeName" destination="05t-4k-gCs" id="dtP-vO-DUT"/>
                                 </connections>
                             </tableViewCell>
-                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientDetailCell" rowHeight="44" id="SRZ-en-qUW">
+                            <tableViewCell contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" reuseIdentifier="IngredientDetailCell" rowHeight="45" id="SRZ-en-qUW" customClass="P8IngredientDetailTableViewCell" customModule="Project8" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="SRZ-en-qUW" id="kCX-Mb-HeB">
@@ -860,7 +860,7 @@
                     <navigationItem key="navigationItem" id="2Td-pI-uXM">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="nd7-pJ-PHg">
                             <connections>
-                                <segue destination="MrF-zv-zDs" kind="show" id="WXn-CX-iff"/>
+                                <segue destination="Soe-nU-0cm" kind="show" identifier="showRecipeEditor" id="s6J-x7-wnH"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1105,7 +1105,7 @@
                     <navigationItem key="navigationItem" id="Hcj-lG-o14">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NRH-QX-wNB">
                             <connections>
-                                <segue destination="Soe-nU-0cm" kind="show" identifier="toRecipeEditor" id="f6c-Kh-4CV"/>
+                                <segue destination="Soe-nU-0cm" kind="show" identifier="showRecipeEditor" id="f6c-Kh-4CV"/>
                             </connections>
                         </barButtonItem>
                     </navigationItem>
@@ -1140,4 +1140,7 @@
         <image name="1 original.jpg" width="631" height="471"/>
         <image name="dummy" width="75" height="75"/>
     </resources>
+    <inferredMetricsTieBreakers>
+        <segue reference="f6c-Kh-4CV"/>
+    </inferredMetricsTieBreakers>
 </document>

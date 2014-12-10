@@ -18,6 +18,7 @@
 		683D5C021A36C64C00019906 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C011A36C64C00019906 /* Recipe.swift */; };
 		683D5C041A36C65C00019906 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C031A36C65C00019906 /* Ingredient.swift */; };
 		683D5C061A36C74900019906 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C051A36C74900019906 /* Step.swift */; };
+		6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */; };
 		68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDD1A24970E0085E763 /* FBHelper.swift */; };
 		68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */; };
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
@@ -58,6 +59,7 @@
 		683D5C011A36C64C00019906 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = NSManaged/Recipe.swift; sourceTree = "<group>"; };
 		683D5C031A36C65C00019906 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = NSManaged/Ingredient.swift; sourceTree = "<group>"; };
 		683D5C051A36C74900019906 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = NSManaged/Step.swift; sourceTree = "<group>"; };
+		6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientDetailTableViewCell.swift; path = RecipeTable/P8IngredientDetailTableViewCell.swift; sourceTree = "<group>"; };
 		68538EDD1A24970E0085E763 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBHelper.swift; path = Helper/FBHelper.swift; sourceTree = "<group>"; };
 		68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientsTableViewController.swift; path = ../P8IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
@@ -119,6 +121,7 @@
 			children = (
 				683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */,
 				683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */,
+				6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */,
 				68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */,
 				683D5BF41A36C41A00019906 /* P8RecipeTableViewCell.swift */,
 				683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */,
@@ -372,6 +375,7 @@
 				683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */,
 				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
 				683D5C061A36C74900019906 /* Step.swift in Sources */,
+				6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 				683D5BF71A36C41A00019906 /* P8RecipeEditorViewController.swift in Sources */,
 				68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */,

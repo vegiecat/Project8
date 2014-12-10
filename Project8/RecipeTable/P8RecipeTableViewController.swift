@@ -143,10 +143,11 @@ class P8RecipeTableViewController: UITableViewController {
     // Get the new view controller using [segue destinationViewController].
     // Pass the selected object to the new view controller.
         
-        if segue.identifier == "toRecipeEditor" {
+        if segue.identifier == "showRecipeEditor" {
             let recipeCreateViewController = segue.destinationViewController as P8RecipeEditorViewController
             recipeCreateViewController.imFrom = "I came from Main Recipe Page"
             recipeCreateViewController.dataSource = self.dataSource
+            self.dataSource.addNewRecipe()
         } else if segue.identifier == "showRecipeDetail" {
             let recipeController = segue.destinationViewController as P8RecipeDetailTableViewController
             recipeController.imFrom = "I came from Main Recipe Page"
