@@ -137,10 +137,14 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         // Pass the selected object to the new view controller.
         
         if segue.identifier == "showIngredientEditor" {
-            let temp = segue.destinationViewController as P8IngredientEditorTableViewController
-            println(object_getClassName(temp))
-            temp.imFrom = "I came from Recipe Editor"
-            temp.dataSource = self.dataSource
+            let editor = segue.destinationViewController as JLIngredientEditorTableViewController
+            
+            println(object_getClassName(editor))
+            
+            //temp.imFrom = "I came from Recipe Editor"
+            
+            //TODO: implement ingredient editor datasource protocol in core data helper
+            //editor.editorDatasource = self.dataSource
         }
         
         if segue.identifier == "showStepEditor" {
