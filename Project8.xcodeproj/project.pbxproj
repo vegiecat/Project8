@@ -35,6 +35,8 @@
 		D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */; };
 		D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0A126431A31965800A05F0B /* TemplateTableViewController.swift */; };
 		D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */; };
+		D0E329AC1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E329AB1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m */; };
+		D0E329B01A38C02C00FBDE08 /* UIImage+JLUtilities.m in Sources */ = {isa = PBXBuildFile; fileRef = D0E329AF1A38C02C00FBDE08 /* UIImage+JLUtilities.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -86,6 +88,10 @@
 		D0A125BD1A31681700A05F0B /* Project8-Bridge-Header.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "Project8-Bridge-Header.h"; path = "Project8/Project8-Bridge-Header.h"; sourceTree = SOURCE_ROOT; };
 		D0A126431A31965800A05F0B /* TemplateTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TemplateTableViewController.swift; sourceTree = "<group>"; };
 		D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RecipeEditorViewController.swift; sourceTree = "<group>"; };
+		D0E329AA1A38BF4E00FBDE08 /* JLIngredientTableViewCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLIngredientTableViewCell.h; path = "Project8/JL Ingredient Editor/JLIngredientTableViewCell.h"; sourceTree = SOURCE_ROOT; };
+		D0E329AB1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLIngredientTableViewCell.m; path = "Project8/JL Ingredient Editor/JLIngredientTableViewCell.m"; sourceTree = SOURCE_ROOT; };
+		D0E329AE1A38C02C00FBDE08 /* UIImage+JLUtilities.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "UIImage+JLUtilities.h"; path = "JL Utilities/UIImage+JLUtilities.h"; sourceTree = "<group>"; };
+		D0E329AF1A38C02C00FBDE08 /* UIImage+JLUtilities.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = "UIImage+JLUtilities.m"; path = "JL Utilities/UIImage+JLUtilities.m"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -187,6 +193,7 @@
 		68D71A611A1E4AF8004FC7DA /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				D0E329AD1A38BFFC00FBDE08 /* JLUtilities */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
 				68F022A91A374E4B00945C3A /* JLIngredientEditor */,
 				D0A125A91A31660900A05F0B /* JL Step Editor */,
@@ -239,6 +246,8 @@
 			children = (
 				D0A125B61A31668800A05F0B /* JLIngredientEditorTableViewController.h */,
 				D0A125B71A31668800A05F0B /* JLIngredientEditorTableViewController.m */,
+				D0E329AA1A38BF4E00FBDE08 /* JLIngredientTableViewCell.h */,
+				D0E329AB1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m */,
 			);
 			name = JLIngredientEditor;
 			path = "JL Step Editor";
@@ -255,6 +264,15 @@
 				D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */,
 			);
 			path = "JL Step Editor";
+			sourceTree = "<group>";
+		};
+		D0E329AD1A38BFFC00FBDE08 /* JLUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				D0E329AE1A38C02C00FBDE08 /* UIImage+JLUtilities.h */,
+				D0E329AF1A38C02C00FBDE08 /* UIImage+JLUtilities.m */,
+			);
+			name = JLUtilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -366,6 +384,7 @@
 				683D5BF91A36C41A00019906 /* P8RecipeDetailTableViewController.swift in Sources */,
 				D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */,
 				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
+				D0E329AC1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m in Sources */,
 				683D5BF81A36C41A00019906 /* P8RecipeDetailViewController.swift in Sources */,
 				683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */,
 				D0A126441A31965800A05F0B /* TemplateTableViewController.swift in Sources */,
@@ -379,6 +398,7 @@
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 				683D5BF71A36C41A00019906 /* P8RecipeEditorViewController.swift in Sources */,
 				68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */,
+				D0E329B01A38C02C00FBDE08 /* UIImage+JLUtilities.m in Sources */,
 				683D5C021A36C64C00019906 /* Recipe.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

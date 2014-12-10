@@ -15,7 +15,11 @@
 
 #import <MobileCoreServices/MobileCoreServices.h>
 
+#import "UIImage+JLUtilities.h"
+
+
 #define kSegueIDStepTextEntry @"showStepTextEntry"
+#define kStepImageWidth 320
 
 //cell will be populated with this if text data is blank
 #define kPlaceHolderStepText @"Tap here to enter instructions for this step."
@@ -111,11 +115,13 @@
     if ((aStep.stepText != nil) && ![aStep.stepText isEqualToString:@""]) {
         stepText = aStep.stepText;
     }
-    
     //PREP IMAGE
     UIImage *stepImage = nil;
     if (aStep.stepImage != nil) {
-        //stepImage = aStep.stepImage;
+        UIImage *image = [UIImage imageWithData:aStep.stepImage];
+        if (image) {
+            stepImage = image;
+        }
     }
     
     //MAP DATA OBJECT TO CELL
@@ -341,7 +347,12 @@
         
         //UPDATE THE MODEL
         Step *aStep = self.steps[_selectedIndexPath.row];
-        //aStep.stepImage = imageToSave;
+        
+        NSData *scaledDownData = [UIImage imageDataFromImage:imageToSave scaledToSize:CGSizeMake(kStepImageWidth,kStepImageWidth)];
+        
+        if (scaledDownData) {
+            aStep.stepImage = scaledDownData;
+        }
         
         [self.datasource stepEditor:self didEditStep:aStep];
         
