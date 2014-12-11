@@ -9,7 +9,10 @@
 import UIKit
 import CoreData
 
-class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDataSource,JLStepEditorTableViewControllerDatasource{
+class P8CoreDataHelper: NSObject,
+    P8RecipeEditorDataSource,
+    JLStepEditorTableViewControllerDatasource,
+    JLIngredientEditorTableViewControllerDatasource{
     
     var recipeOfInterest:Recipe?
     let globalMOC = managedObjectContext()
@@ -45,19 +48,8 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         */
     }
     
-    //Obsolete function
-    func getAllRecipesArrayWithDictionary()->NSArray{
-        
-        var yourRecipes = [NSDictionary]()
-        for recipe in getAllRecipes(){
-            let singleRecipe:Recipe = recipe as Recipe
-            let recipeDict:NSDictionary = ["id":"test","name":singleRecipe.name]
-            yourRecipes.append(recipeDict)
-            
-        }
-        return yourRecipes
-    }
-    
+
+    //MARK: RecipeTable
     func getAllRecipes()->NSArray{
         
         var allYourRecipes:NSArray = NSArray()
@@ -82,7 +74,6 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         return allYourRecipes
     }
 
-    
     func userDidSelectRecipe(recipeSelected:Recipe){
         println("----userDidSelectRecipe----")
         recipeOfInterest = recipeSelected
@@ -95,8 +86,64 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         return recipeOfInterest!
 
     }
+
+    //MARK: recipeEditor
+    //addNewRecipe is a hack to make the flow work right now
+    func addNewRecipe(){
+        self.recipeOfInterest = nil
+    }
     
-    //MARK: stepEditor
+    func recipeForRecipeEditor(recipeEditor:P8RecipeEditorViewController)->Recipe{
+        println("----recipeForRecipeEditor----")
+        checkCurrentRecipe()
+        if recipeOfInterest != nil{
+            if recipeOfInterest!.name != "Recipe Name"{
+                
+            }
+        }else{
+            self.recipeOfInterest = self.newRecipe()
+            self.recipeOfInterest!.name = "Recipe Name"
+        }
+        
+        
+        //self.currentEditingRecipe = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
+        /*
+        var temp = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
+        let entity =  NSEntityDescription.entityForName("Recipe",inManagedObjectContext:globalMOC)
+        let NSMO = NSManagedObject(entity: entity!,insertIntoManagedObjectContext:globalMOC) as Recipe
+        NSMO.name = "test"
+        println(NSMO.name)
+        */
+        
+        checkCurrentRecipe()
+        
+        return self.recipeOfInterest!
+        
+        
+        /*
+        let recipeOfInterest = self.newRecipe()
+        self.currentEditingRecipe = recipeOfInterest
+        return recipeOfInterest
+        */
+    }
+    
+    func recipeEditorDidUpdateRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool{
+        println("----recipeEditorDidUpdateRecipe----")
+        checkCurrentRecipe()
+        //self.currentEditingRecipe = recipe
+        //checkCurrentRecipe()
+        return update()
+    }
+    
+    func newRecipe()->Recipe{
+        //let moc = self.managedObjectContext()
+        let newRecipe = self.insertManagedObject(NSStringFromClass(Recipe),managedObjectContext:globalMOC) as Recipe
+        //let newRecipeDict = newRecipe.toDict()
+        return newRecipe
+    }
+    
+
+    //MARK: JLStepEditor
     //called when the view controller is getting set up
     func stepsArrayForStepEditor(stepEditor: JLStepEditorTableViewController!) -> [AnyObject]! {
         println("----stepsArrayForStepEditor----")
@@ -137,67 +184,50 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         return newStep
     }
 
+    //MARK: JLIngredientEditor
     
-    //MARK: recipeEditor
-    //addNewRecipe is a hack to make the flow work right now
-    func addNewRecipe(){
-        self.recipeOfInterest = nil
+    //called when ingredient editor is getting setup
+    func ingredientsArrayForIngredientEditor(editor: JLIngredientEditorTableViewController!) -> [AnyObject]! {
+        println("----ingredientsArrayForIngredientEditor----")
+        checkCurrentRecipe()
+        return self.recipeOfInterest?.ingredient.array as [Ingredient]
     }
     
-    func recipeForRecipeEditor(recipeEditor:P8RecipeEditorViewController)->Recipe{
-        println("----recipeForRecipeEditor----")
+    //called when new ingredient is created
+    func newIngredientForIngredientEditor(editor: JLIngredientEditorTableViewController!) -> Ingredient! {
+        println("----newIngredientForIngredientEditor----")
         checkCurrentRecipe()
-        if recipeOfInterest != nil{
-            if recipeOfInterest!.name != "Recipe Name"{
-                
-            }
-        }else{
-            self.recipeOfInterest = self.newRecipe()
-            self.recipeOfInterest!.name = "Recipe Name"
-        }
-
-        
-        //self.currentEditingRecipe = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
-        /*
-        var temp = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
-        let entity =  NSEntityDescription.entityForName("Recipe",inManagedObjectContext:globalMOC)
-        let NSMO = NSManagedObject(entity: entity!,insertIntoManagedObjectContext:globalMOC) as Recipe
-        NSMO.name = "test"
-        println(NSMO.name)
-        */
-        
-        checkCurrentRecipe()
-
-        return self.recipeOfInterest!
-        
-
-        /*
-        let recipeOfInterest = self.newRecipe()
-        self.currentEditingRecipe = recipeOfInterest
-        return recipeOfInterest
-        */
+        let anotherIngredient = newIngredient()
+        anotherIngredient.recipe = self.recipeOfInterest!
+        return anotherIngredient
     }
     
-    func recipeEditorDidUpdateRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool{
-        println("----recipeEditorDidUpdateRecipe----")
+    //called when ingredient order changed
+    func ingredientEditor(editor: JLIngredientEditorTableViewController!, didUpdateIngredientsArray ingredientsArray: [AnyObject]!) {
+        println("----ingredientEditorDidUpdateIngredientsArray----")
+        self.recipeOfInterest?.ingredient = NSOrderedSet(array:ingredientsArray)
         checkCurrentRecipe()
-        //self.currentEditingRecipe = recipe
-        //checkCurrentRecipe()
-        return update()
+        update()
+    }
+    
+    //called when ingredient is updated
+    func ingredientEditor(editor: JLIngredientEditorTableViewController!, didUpdateIngredient editedIngredient: Ingredient!) {
+    }
+    
+    //called when ingredient is deleted
+    func ingredientEditor(editor: JLIngredientEditorTableViewController!, didDeleteIngredient deletedIngredient: Ingredient!) {
     }
 
-    
-    
-    func newRecipe()->Recipe{
+    func newIngredient()->Ingredient{
         //let moc = self.managedObjectContext()
-        let newRecipe = self.insertManagedObject(NSStringFromClass(Recipe),managedObjectContext:globalMOC) as Recipe
+        let newIngredient = self.insertManagedObject(NSStringFromClass(Ingredient),managedObjectContext:globalMOC) as Ingredient
         //let newRecipeDict = newRecipe.toDict()
-        return newRecipe
+        return newIngredient
     }
-    
+
     
     //MARK: ingredientEditor
-
+    /*
     func ingredientsArrayForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->[Ingredient]{
         println("----ingredientsArrayForIngredientEditor----")
         checkCurrentRecipe()
@@ -216,19 +246,18 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
         return anotherIngredient
     }
 
-    func newIngredient()->Ingredient{
-        //let moc = self.managedObjectContext()
-        let newIngredient = self.insertManagedObject(NSStringFromClass(Ingredient),managedObjectContext:globalMOC) as Ingredient
-        //let newRecipeDict = newRecipe.toDict()
-        return newIngredient
-    }
 
     func ingredientsEditorDidUpdateIngredientsArray(ingredientEditor:P8IngredientEditorTableViewController,ingredientArray:[Ingredient]){
-        println("----newIngredientsForIngredientEditor----")
+        println("----ingredientsEditorDidUpdateIngredientsArray----")
         self.recipeOfInterest?.ingredient = NSOrderedSet(array:ingredientArray)
         checkCurrentRecipe()
         update()
     }
+    */
+    
+    
+    
+    //MARK: Others
 
     
     func managedObjectContext()->NSManagedObjectContext{
@@ -332,5 +361,17 @@ class P8CoreDataHelper: NSObject, P8RecipeEditorDataSource,P8IngredientEditorDat
 
     }
     
-    
+    //Obsolete function
+    func getAllRecipesArrayWithDictionary()->NSArray{
+        
+        var yourRecipes = [NSDictionary]()
+        for recipe in getAllRecipes(){
+            let singleRecipe:Recipe = recipe as Recipe
+            let recipeDict:NSDictionary = ["id":"test","name":singleRecipe.name]
+            yourRecipes.append(recipeDict)
+            
+        }
+        return yourRecipes
+    }
+
 }
