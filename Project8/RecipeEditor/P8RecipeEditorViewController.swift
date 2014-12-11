@@ -143,8 +143,7 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
             
             //temp.imFrom = "I came from Recipe Editor"
             
-            //TODO: implement ingredient editor datasource protocol in core data helper
-            //editor.editorDatasource = self.dataSource
+            editor.editorDatasource = self.dataSource
         }
         
         if segue.identifier == "showStepEditor" {
