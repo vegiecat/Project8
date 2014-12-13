@@ -29,6 +29,7 @@
 		68D71A7E1A1E4AF8004FC7DA /* Project8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */; };
 		68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */; };
 		D021A7471A1F08DF0090900E /* 1 original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021A7461A1F08DF0090900E /* 1 original.jpg */; };
+		D033396D1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */; };
 		D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AB1A31660900A05F0B /* JLMultiLineTextEntryViewController.m */; };
 		D0A125B31A31660900A05F0B /* JLStepEditorTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AD1A31660900A05F0B /* JLStepEditorTableViewController.m */; };
 		D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D0A125AF1A31660900A05F0B /* JLStepTableViewCell.m */; };
@@ -77,6 +78,8 @@
 		68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project8Tests.swift; sourceTree = "<group>"; };
 		68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailTableViewCell.swift; path = RecipeTable/P8RecipeDetailTableViewCell.swift; sourceTree = "<group>"; };
 		D021A7461A1F08DF0090900E /* 1 original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 original.jpg"; sourceTree = "<group>"; };
+		D033396B1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLMultiStepImagePickerViewController.h; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.h"; sourceTree = "<group>"; };
+		D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLMultiStepImagePickerViewController.m; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.m"; sourceTree = "<group>"; };
 		D0A125AA1A31660900A05F0B /* JLMultiLineTextEntryViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLMultiLineTextEntryViewController.h; sourceTree = "<group>"; };
 		D0A125AB1A31660900A05F0B /* JLMultiLineTextEntryViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = JLMultiLineTextEntryViewController.m; sourceTree = "<group>"; };
 		D0A125AC1A31660900A05F0B /* JLStepEditorTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = JLStepEditorTableViewController.h; sourceTree = "<group>"; };
@@ -211,6 +214,7 @@
 				68D71A621A1E4AF8004FC7DA /* Supporting Files */,
 				D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */,
 				D0A126431A31965800A05F0B /* TemplateTableViewController.swift */,
+				D033396E1A3BDF6F003B6DCC /* JL Multi Impage Picker */,
 			);
 			path = Project8;
 			sourceTree = "<group>";
@@ -251,6 +255,15 @@
 			);
 			name = JLIngredientEditor;
 			path = "JL Step Editor";
+			sourceTree = "<group>";
+		};
+		D033396E1A3BDF6F003B6DCC /* JL Multi Impage Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D033396B1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.h */,
+				D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */,
+			);
+			name = "JL Multi Impage Picker";
 			sourceTree = "<group>";
 		};
 		D0A125A91A31660900A05F0B /* JL Step Editor */ = {
@@ -395,6 +408,7 @@
 				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
 				683D5C061A36C74900019906 /* Step.swift in Sources */,
 				6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */,
+				D033396D1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m in Sources */,
 				68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */,
 				683D5BF71A36C41A00019906 /* P8RecipeEditorViewController.swift in Sources */,
 				68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */,
