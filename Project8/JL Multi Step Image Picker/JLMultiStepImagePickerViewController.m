@@ -9,13 +9,54 @@
 #import "JLMultiStepImagePickerViewController.h"
 #import <AssetsLibrary/AssetsLibrary.h> 
 
+
 #import "Project8-Swift.h"
 
 @implementation JLMultiStepImagePickerViewController
 
 #pragma mark - Presenting the picker
 - (IBAction)didTapShowPickerButton:(id)sender {
-    //show our image picker
+    
+    ELCImagePickerController *elcPicker = [[ELCImagePickerController alloc] initImagePicker];
+    
+    elcPicker.maximumImagesCount = 100; //Set the maximum number of images to select to 100
+    elcPicker.returnsOriginalImage = YES; //Only return the fullScreenImage, not the fullResolutionImage
+    elcPicker.returnsImage = YES; //Return UIimage if YES. If NO, only return asset location information
+    elcPicker.onOrder = YES; //For multiple image selection, display and return order of selected images
+    elcPicker.mediaTypes = @[(NSString *)kUTTypeImage, (NSString *)kUTTypeMovie]; //Supports image and movie types
+    
+    elcPicker.imagePickerDelegate = self;
+    
+    [self presentViewController:elcPicker animated:YES completion:nil];
+}
+
+
+#pragma mark ELCImagePickerControllerDelegate Methods
+
+- (void)elcImagePickerController:(ELCImagePickerController *)picker didFinishPickingMediaWithInfo:(NSArray *)info
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
+    
+    NSMutableArray *images = [NSMutableArray arrayWithCapacity:[info count]];
+    for (NSDictionary *dict in info) {
+        //NSLog(@"dict: %@",dict);
+        
+        if ([dict objectForKey:UIImagePickerControllerMediaType] == ALAssetTypePhoto){
+            if ([dict objectForKey:UIImagePickerControllerOriginalImage]){
+                UIImage* image=[dict objectForKey:UIImagePickerControllerOriginalImage];
+                [images addObject:image];
+            } else {
+                NSLog(@"UIImagePickerControllerReferenceURL = %@", dict);
+            }
+        }
+    }
+    
+    [self convertImagesToSteps:images];
+}
+
+- (void)elcImagePickerControllerDidCancel:(ELCImagePickerController *)picker
+{
+    [self dismissViewControllerAnimated:YES completion:nil];
 }
 
 
@@ -30,6 +71,30 @@
 }
 
 #pragma mark -
+
+- (void)convertImagesToSteps:(NSArray *)images {
+    //containers
+    NSMutableArray *stepsContainer = [[NSMutableArray alloc] initWithCapacity:images.count];
+    
+    //loop through array
+    //for each asset, convert it to image
+    //and then use that image to create a step
+    //add that to continer
+    //after we're all done, pass an array of the new steps to our datasource
+    for (UIImage *anImage in images) {
+        if (anImage) {
+            Step *newStep = [self createStepFromImage:anImage]; //if datasource not implemented, new step will be a nil
+            if (newStep) {
+                [stepsContainer addObject:anImage];
+            }
+        }
+    }
+    
+    NSLog(@"steps container: %@",stepsContainer);
+    
+    //tell our datasource we're done, and we give them a new array of the steps created
+    [self.pickerDatasource multiStepImagePicker:self didFinishCreatingSteps:[NSArray arrayWithArray:stepsContainer]];
+}
 
 - (void)convertALAssetsToSteps:(NSArray *)assets {
     
@@ -54,7 +119,8 @@
     [self.pickerDatasource multiStepImagePicker:self didFinishCreatingSteps:[NSArray arrayWithArray:stepsContainer]];
 }
 
-#warning may have to auto release to release our image immediately
+
+
 
 
 - (UIImage *)imagefromAsset:(ALAsset *)asset {

@@ -8,6 +8,11 @@
 
 #import <UIKit/UIKit.h>
 
+//NEEDED FOR MULTI-IMAGE PICKER
+#import "ELCImagePickerController.h"
+#import <MobileCoreServices/MobileCoreServices.h>
+
+
 #import "UIImage+JLUtilities.h"
 
 @class JLMultiStepImagePickerViewController;
@@ -25,7 +30,7 @@
 
 @end
 
-@interface JLMultiStepImagePickerViewController : UIViewController
+@interface JLMultiStepImagePickerViewController : UIViewController <ELCImagePickerControllerDelegate>
 
 @property (nonatomic,weak) id <JLMultiStepImagePickerViewControllerDatasource> pickerDatasource;
 
