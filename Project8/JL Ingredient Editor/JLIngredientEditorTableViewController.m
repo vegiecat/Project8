@@ -133,7 +133,7 @@
         
         //Update table view
         [tableView deleteRowsAtIndexPaths:@[indexPath] withRowAnimation:UITableViewRowAnimationFade];
-        
+        [self updateDatasource];
     }
 }
 

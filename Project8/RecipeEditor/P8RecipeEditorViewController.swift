@@ -112,7 +112,6 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
     @IBAction func addUpdateRecipe(sender: AnyObject) {
         
         self.recipe!.name = recipeName.text
-        self.recipe!.id = NSUUID().UUIDString
         let recipeCoverPhotoData:NSData = UIImagePNGRepresentation(recipeCoverPhoto.image)
         self.recipe!.coverPhoto = recipeCoverPhotoData
         

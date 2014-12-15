@@ -89,7 +89,7 @@ class P8RecipeTableViewController: UITableViewController {
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        
+        println(indexPath.row)
         let recipeSelected = yourRecipes.objectAtIndex(indexPath.row) as Recipe
         println("i got selected \(recipeSelected.id)")
         

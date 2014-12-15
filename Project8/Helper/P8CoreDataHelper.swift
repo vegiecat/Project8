@@ -49,7 +49,7 @@ class P8CoreDataHelper: NSObject,
     }
     
 
-    //MARK: RecipeTable
+    //MARK: recipeTable
     func getAllRecipes()->NSArray{
         
         var allYourRecipes:NSArray = NSArray()
@@ -98,14 +98,11 @@ class P8CoreDataHelper: NSObject,
         checkCurrentRecipe()
         if recipeOfInterest != nil{
             if recipeOfInterest!.name != "Recipe Name"{
-                
             }
         }else{
             self.recipeOfInterest = self.newRecipe()
             self.recipeOfInterest!.name = "Recipe Name"
         }
-        
-        
         //self.currentEditingRecipe = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
         /*
         var temp = NSEntityDescription.insertNewObjectForEntityForName("Recipe", inManagedObjectContext: globalMOC) as Recipe
@@ -114,12 +111,8 @@ class P8CoreDataHelper: NSObject,
         NSMO.name = "test"
         println(NSMO.name)
         */
-        
         checkCurrentRecipe()
-        
         return self.recipeOfInterest!
-        
-        
         /*
         let recipeOfInterest = self.newRecipe()
         self.currentEditingRecipe = recipeOfInterest
@@ -135,12 +128,6 @@ class P8CoreDataHelper: NSObject,
         return update()
     }
     
-    func newRecipe()->Recipe{
-        //let moc = self.managedObjectContext()
-        let newRecipe = self.insertManagedObject(NSStringFromClass(Recipe),managedObjectContext:globalMOC) as Recipe
-        //let newRecipeDict = newRecipe.toDict()
-        return newRecipe
-    }
     
 
     //MARK: JLStepEditor
@@ -179,13 +166,8 @@ class P8CoreDataHelper: NSObject,
         checkCurrentRecipe()
     }
     
-    func newStep()->Step{
-        let newStep = self.insertManagedObject(NSStringFromClass(Step),managedObjectContext:globalMOC) as Step
-        return newStep
-    }
 
     //MARK: JLIngredientEditor
-    
     //called when ingredient editor is getting setup
     func ingredientsArrayForIngredientEditor(editor: JLIngredientEditorTableViewController!) -> [AnyObject]! {
         println("----ingredientsArrayForIngredientEditor----")
@@ -212,54 +194,43 @@ class P8CoreDataHelper: NSObject,
     
     //called when ingredient is updated
     func ingredientEditor(editor: JLIngredientEditorTableViewController!, didUpdateIngredient editedIngredient: Ingredient!) {
+        update()
     }
     
     //called when ingredient is deleted
     func ingredientEditor(editor: JLIngredientEditorTableViewController!, didDeleteIngredient deletedIngredient: Ingredient!) {
     }
 
+    
+    
+    //MARK: getItems
+    func newRecipe()->Recipe{
+        let newRecipe = self.insertManagedObject(NSStringFromClass(Recipe),managedObjectContext:globalMOC) as Recipe
+        newRecipe.id = NSUUID().UUIDString
+        return newRecipe
+    }
+    
     func newIngredient()->Ingredient{
-        //let moc = self.managedObjectContext()
         let newIngredient = self.insertManagedObject(NSStringFromClass(Ingredient),managedObjectContext:globalMOC) as Ingredient
-        //let newRecipeDict = newRecipe.toDict()
+        newIngredient.id = NSUUID().UUIDString
         return newIngredient
     }
-
     
-    //MARK: ingredientEditor
-    /*
-    func ingredientsArrayForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->[Ingredient]{
-        println("----ingredientsArrayForIngredientEditor----")
-        checkCurrentRecipe()
-        self.recipeOfInterest?.ingredient
-        //let ingredientsArray = [Ingredient]()
-        //return ingredientsArray
-        return self.recipeOfInterest?.ingredient.array as [Ingredient]
+    func newStep()->Step{
+        let newStep = self.insertManagedObject(NSStringFromClass(Step),managedObjectContext:globalMOC) as Step
+        newStep.id = NSUUID().UUIDString
+        return newStep
     }
 
-    func newIngredientForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->Ingredient{
-        println("----newIngredientsForIngredientEditor----")
-        checkCurrentRecipe()
-        println("you have \(ingredientEditor.ingredients.count) ingredients")
-        let anotherIngredient = newIngredient()
-        anotherIngredient.recipe = self.recipeOfInterest!
-        return anotherIngredient
+    //MARK: deleteItems
+    func deleteIngredient(ingredient:Ingredient) {
+        globalMOC.deleteObject(ingredient)
+        self.update()
     }
 
+    
+    //MARK: CoreDataConnectivity
 
-    func ingredientsEditorDidUpdateIngredientsArray(ingredientEditor:P8IngredientEditorTableViewController,ingredientArray:[Ingredient]){
-        println("----ingredientsEditorDidUpdateIngredientsArray----")
-        self.recipeOfInterest?.ingredient = NSOrderedSet(array:ingredientArray)
-        checkCurrentRecipe()
-        update()
-    }
-    */
-    
-    
-    
-    //MARK: Others
-
-    
     func managedObjectContext()->NSManagedObjectContext{
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext!
@@ -267,11 +238,8 @@ class P8CoreDataHelper: NSObject,
     }
     
     func insertManagedObject(className:String, managedObjectContext:NSManagedObjectContext)->AnyObject{
-        
         let entity =  NSEntityDescription.entityForName(className,inManagedObjectContext:globalMOC)
-        
         let NSMO = NSManagedObject(entity: entity!,insertIntoManagedObjectContext:globalMOC)
-
         //let entity = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: managedObjectContext) as NSManagedObject
         return NSMO
     }
@@ -285,11 +253,10 @@ class P8CoreDataHelper: NSObject,
         }else{
             return true
         }
-
     }
     
+    
     func saveManagedObjectContext(managedObjectContext:NSManagedObjectContext)->Bool{
-        
         var error: NSError?
         if !managedObjectContext.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
@@ -297,30 +264,24 @@ class P8CoreDataHelper: NSObject,
         }else{
             return true
         }
-        
     }
 
     
     //consider remove this in the future when all coredata stuff is fenced off.
     class func managedObjectContext()->NSManagedObjectContext{
-        
         let appDelegate = UIApplication.sharedApplication().delegate as AppDelegate
         let managedObjectContext = appDelegate.managedObjectContext!
         return managedObjectContext
     }
+    
     class func insertManagedObject(className:String, managedObjectContext:NSManagedObjectContext)->AnyObject{
-        
         //let entity = NSEntityDescription.entityForName(className, inManagedObjectContext: managedObjectContext)
-
         //let managedObject = NSManagedObject(entity: entity!, insertIntoManagedObjectContext: managedObjectContext)
-        
         let entity = NSEntityDescription.insertNewObjectForEntityForName(className, inManagedObjectContext: managedObjectContext) as NSManagedObject
-        
         return entity
     }
     
     class func saveManagedObjectContext(managedObjectContext:NSManagedObjectContext)->Bool{
-        
         var error: NSError?
         if !managedObjectContext.save(&error) {
             println("Could not save \(error), \(error?.userInfo)")
@@ -330,7 +291,7 @@ class P8CoreDataHelper: NSObject,
         }
     }
     
-    //MARK Helper Classes
+    //MARK: Helper Classes
     func checkCurrentRecipe(){
         if self.P8CoreDataHelperDebugMode{
             if self.recipeOfInterest != nil{
@@ -358,10 +319,25 @@ class P8CoreDataHelper: NSObject,
                 println("current EditingRecipe Is nil")
             }
         }
-
     }
     
-    //Obsolete function
+    
+    //MARK: Debug Functions
+    func getAllIngredients()->[Ingredient]{
+        var allIngredients = [Ingredient]()
+        let fetchIngredients = NSFetchRequest(entityName:"Ingredient")
+        var error: NSError?
+        let fetchedResults = globalMOC.executeFetchRequest(fetchIngredients, error: &error) as [Ingredient]?
+        
+        if let results = fetchedResults {
+            allIngredients = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+        return allIngredients
+    }
+    //MARK:Obsolete function
     func getAllRecipesArrayWithDictionary()->NSArray{
         
         var yourRecipes = [NSDictionary]()
@@ -374,4 +350,34 @@ class P8CoreDataHelper: NSObject,
         return yourRecipes
     }
 
+    //MARK: ingredientEditor
+    /*
+    func ingredientsArrayForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->[Ingredient]{
+    println("----ingredientsArrayForIngredientEditor----")
+    checkCurrentRecipe()
+    self.recipeOfInterest?.ingredient
+    //let ingredientsArray = [Ingredient]()
+    //return ingredientsArray
+    return self.recipeOfInterest?.ingredient.array as [Ingredient]
+    }
+    
+    func newIngredientForIngredientEditor(ingredientEditor:P8IngredientEditorTableViewController)->Ingredient{
+    println("----newIngredientsForIngredientEditor----")
+    checkCurrentRecipe()
+    println("you have \(ingredientEditor.ingredients.count) ingredients")
+    let anotherIngredient = newIngredient()
+    anotherIngredient.recipe = self.recipeOfInterest!
+    return anotherIngredient
+    }
+    
+    
+    func ingredientsEditorDidUpdateIngredientsArray(ingredientEditor:P8IngredientEditorTableViewController,ingredientArray:[Ingredient]){
+    println("----ingredientsEditorDidUpdateIngredientsArray----")
+    self.recipeOfInterest?.ingredient = NSOrderedSet(array:ingredientArray)
+    checkCurrentRecipe()
+    update()
+    }
+    */
+
+    
 }
