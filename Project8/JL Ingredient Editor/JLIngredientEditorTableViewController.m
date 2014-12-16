@@ -18,6 +18,7 @@
 
 @interface JLIngredientEditorTableViewController () <JLMultiLineTextEntryViewControllerDelegate> {
     NSIndexPath *_selectedIndexPath;
+    BOOL _isEditMode;
 }
 
 @property (nonatomic,strong) NSMutableArray *ingredients;
@@ -66,6 +67,27 @@
 - (void)viewWillAppear:(BOOL)animated {
     [super viewWillAppear:animated];
     [self.tableView setEditing:YES];
+    
+    
+    [self.navigationController setToolbarHidden:NO animated:YES];
+    
+    UIBarButtonItem *editButton = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemEdit target:self action:@selector(editButtonPressed:)];
+    
+    UIBarButtonItem *space = [[UIBarButtonItem alloc] initWithBarButtonSystemItem:UIBarButtonSystemItemFlexibleSpace target:self action:NULL];
+    
+    [self setToolbarItems:@[space,editButton]];
+    
+    self.tableView.editing = NO;
+    
+    
+}
+
+- (void)editButtonPressed:(id)sender {
+    _isEditMode = !_isEditMode;
+    
+    [self.tableView setEditing:_isEditMode animated:YES];
+    
+    
 }
 
 - (void)viewDidAppear:(BOOL)animated {
