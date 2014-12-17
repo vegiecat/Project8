@@ -1,20 +1,22 @@
 //
-//  TableViewController.swift
+//  P8DebugStepTableViewController.swift
 //  Project8
 //
-//  Created by Vegiecat Studio on 12/15/14.
+//  Created by Vegiecat Studio on 12/17/14.
 //  Copyright (c) 2014 Vegiecat Studio. All rights reserved.
 //
 
 import UIKit
 
-class P8DebugIngredientTableViewController: UITableViewController {
+class P8DebugStepTableViewController: UITableViewController {
 
+    
     let dataSource = P8CoreDataHelper()
-    var allIngredients:NSArray = NSArray()
-
+    var allSteps:NSArray = NSArray()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
 
@@ -27,10 +29,8 @@ class P8DebugIngredientTableViewController: UITableViewController {
         self.loadData()
         self.navigationController?.toolbarHidden = true
     }
-    
-    
     func loadData(){
-        self.allIngredients = dataSource.getAllIngredients()
+        self.allSteps = dataSource.getAllSteps()
         self.tableView.reloadData()
     }
 
@@ -50,24 +50,26 @@ class P8DebugIngredientTableViewController: UITableViewController {
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete method implementation.
         // Return the number of rows in the section.
-        return self.allIngredients.count
+        return self.allSteps.count
     }
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("DebugIngredientCell", forIndexPath: indexPath) as P8DebugIngredientTableViewCell
-        let ingredient = self.allIngredients.objectAtIndex(indexPath.row) as Ingredient
-        cell.name.text = ingredient.name
-        cell.id.text = ingredient.id
-
-        let recipeTemp:Recipe = ingredient.recipe
+        let cell = tableView.dequeueReusableCellWithIdentifier("DebugStepCell", forIndexPath: indexPath) as P8DebugStepTableViewCell
+        let step = self.allSteps.objectAtIndex(indexPath.row) as Step
+        cell.stepText.text = step.stepText
+        cell.id.text = step.id
+        let stepImageData:NSData = step.stepImage
+        cell.stepImage.image = UIImage(data: stepImageData)
+        
+        let recipeTemp:Recipe = step.recipe
         if self.pointerToString(recipeTemp) == "0x0000000000000000"{
             cell.recipe.text = "NULL Pointer Dereference"
         }else{
-            cell.recipe.text = ingredient.recipe.name
+            cell.recipe.text = step.recipe.name
         }
         return cell
-    }
 
+    }
     func pointerToString(objRef: AnyObject) -> String {
         let ptr: COpaquePointer =
         Unmanaged<AnyObject>.passUnretained(objRef).toOpaque()
@@ -75,16 +77,16 @@ class P8DebugIngredientTableViewController: UITableViewController {
     }
 
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        let ingredientToBeDeleted = self.allIngredients[indexPath.row] as Ingredient
+        let stepToBeDeleted = self.allSteps[indexPath.row] as Step
         
         
-        var alert = UIAlertController(title: "Delete Ingredient",
-            message: "Delete '\(ingredientToBeDeleted.name)' Perminately",
+        var alert = UIAlertController(title: "Delete Step",
+            message: "Delete '\(stepToBeDeleted.stepText)' Perminately",
             preferredStyle: .Alert)
         
         let deleteAction = UIAlertAction(title: "Delete",
             style: .Default) { (action: UIAlertAction!) -> Void in
-                self.dataSource.deleteIngredient(ingredientToBeDeleted)
+                self.dataSource.deleteStep(stepToBeDeleted)
                 //let textField = alert.textFields![0] as UITextField
                 //self.names.append(textField.text)
                 self.loadData()
@@ -102,11 +104,9 @@ class P8DebugIngredientTableViewController: UITableViewController {
         presentViewController(alert,
             animated: true,
             completion: nil)
-    
+        
     }
-    func deleteIndegridient(ingredient:Ingredient){
-        self.dataSource.deleteIngredient(ingredient)
-    }
+
     /*
     // Override to support conditional editing of the table view.
     override func tableView(tableView: UITableView, canEditRowAtIndexPath indexPath: NSIndexPath) -> Bool {

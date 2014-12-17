@@ -9,6 +9,8 @@
 /* Begin PBXBuildFile section */
 		6829C22D1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C22C1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift */; };
 		6829C22F1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C22E1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift */; };
+		6829C2331A414AB900FAC3BA /* P8DebugStepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */; };
+		6829C2351A414B1100FAC3BA /* P8DebugStepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */; };
 		683D5BE81A36B6BC00019906 /* P8CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */; };
 		683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BEA1A36C32D00019906 /* Project8.xcdatamodeld */; };
 		683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */; };
@@ -67,6 +69,8 @@
 /* Begin PBXFileReference section */
 		6829C22C1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugIngredientTableViewController.swift; path = Debug/P8DebugIngredientTableViewController.swift; sourceTree = "<group>"; };
 		6829C22E1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugIngredientTableViewCell.swift; path = Debug/P8DebugIngredientTableViewCell.swift; sourceTree = "<group>"; };
+		6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugStepTableViewCell.swift; path = Debug/P8DebugStepTableViewCell.swift; sourceTree = "<group>"; };
+		6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugStepTableViewController.swift; path = Debug/P8DebugStepTableViewController.swift; sourceTree = "<group>"; };
 		683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8CoreDataHelper.swift; path = Helper/P8CoreDataHelper.swift; sourceTree = "<group>"; };
 		683D5BEB1A36C32D00019906 /* Project8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project8.xcdatamodel; sourceTree = "<group>"; };
 		683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientEditorTableViewController.swift; path = IngredientEditor/P8IngredientEditorTableViewController.swift; sourceTree = "<group>"; };
@@ -159,6 +163,8 @@
 			children = (
 				6829C22E1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift */,
 				6829C22C1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift */,
+				6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */,
+				6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */,
 			);
 			name = Debug;
 			sourceTree = "<group>";
@@ -492,6 +498,7 @@
 				D098BA431A3CFEAC0016CED1 /* ELCImagePickerController.m in Sources */,
 				D098BA421A3CFEAC0016CED1 /* ELCConsole.m in Sources */,
 				D0E329AC1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m in Sources */,
+				6829C2331A414AB900FAC3BA /* P8DebugStepTableViewCell.swift in Sources */,
 				683D5BF81A36C41A00019906 /* P8RecipeDetailViewController.swift in Sources */,
 				D098BA3F1A3CFEAC0016CED1 /* ELCAsset.m in Sources */,
 				683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */,
@@ -500,6 +507,7 @@
 				68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */,
 				D0A125B81A31668800A05F0B /* JLIngredientEditorTableViewController.m in Sources */,
 				683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */,
+				6829C2351A414B1100FAC3BA /* P8DebugStepTableViewController.swift in Sources */,
 				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
 				683D5C061A36C74900019906 /* Step.swift in Sources */,
 				6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */,

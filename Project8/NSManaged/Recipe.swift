@@ -37,5 +37,13 @@ class Recipe: NSManagedObject {
         
         return recipeDictMutable
     }
+    
+    func printName(){
+        if self.name == ""{
+            println("no name?")
+        }else{
+            println(self.name)
+        }
+    }
 
 }

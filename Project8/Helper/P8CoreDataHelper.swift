@@ -223,8 +223,16 @@ class P8CoreDataHelper: NSObject,
     }
 
     //MARK: deleteItems
+    func deleteRecipe(recipe:Recipe) {
+        globalMOC.deleteObject(recipe)
+        self.update()
+    }
     func deleteIngredient(ingredient:Ingredient) {
         globalMOC.deleteObject(ingredient)
+        self.update()
+    }
+    func deleteStep(step:Step) {
+        globalMOC.deleteObject(step)
         self.update()
     }
 
@@ -337,6 +345,23 @@ class P8CoreDataHelper: NSObject,
         
         return allIngredients
     }
+    
+    func getAllSteps()->[Step]{
+        var allSteps = [Step]()
+        let fetchSteps = NSFetchRequest(entityName:"Step")
+        var error: NSError?
+        let fetchedResults = globalMOC.executeFetchRequest(fetchSteps, error: &error) as [Step]?
+        
+        if let results = fetchedResults {
+            allSteps = results
+        } else {
+            println("Could not fetch \(error), \(error!.userInfo)")
+        }
+        
+        return allSteps
+    }
+
+    
     //MARK:Obsolete function
     func getAllRecipesArrayWithDictionary()->NSArray{
         

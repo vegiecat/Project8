@@ -40,6 +40,7 @@ class P8RecipeTableViewController: UITableViewController {
         super.viewDidAppear(animated)
         println("viewAppeared")
         self.loadData()
+        self.navigationController?.toolbarHidden = false
     }
 
     func loadData(){

@@ -28,6 +28,14 @@ class Ingredient: NSManagedObject {
         
         return ingredientDictMutable
     }
-
+    
+    func hasRecipe()->Bool{
+        var hasRecipe = false
+        if self.recipe.name != ""{
+            hasRecipe = true
+        }
+        return hasRecipe
+    }
+    
     
 }
