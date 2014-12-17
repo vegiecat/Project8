@@ -8,10 +8,9 @@
 
 import UIKit
 
-class P8RecipeDetailTableViewCell: UITableViewCell {
+class P8RecipeDetailRecipeCell: UITableViewCell {
 
     @IBOutlet var recipeName: UILabel!
-
     @IBOutlet var recipeCoverPhoto: UIImageView!
     
     override func awakeFromNib() {

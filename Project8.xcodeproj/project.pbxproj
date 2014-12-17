@@ -11,6 +11,7 @@
 		6829C22F1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C22E1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift */; };
 		6829C2331A414AB900FAC3BA /* P8DebugStepTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */; };
 		6829C2351A414B1100FAC3BA /* P8DebugStepTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */; };
+		6839FEDF1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6839FEDE1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift */; };
 		683D5BE81A36B6BC00019906 /* P8CoreDataHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */; };
 		683D5BEC1A36C32D00019906 /* Project8.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BEA1A36C32D00019906 /* Project8.xcdatamodeld */; };
 		683D5BEE1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */; };
@@ -22,7 +23,7 @@
 		683D5C021A36C64C00019906 /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C011A36C64C00019906 /* Recipe.swift */; };
 		683D5C041A36C65C00019906 /* Ingredient.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C031A36C65C00019906 /* Ingredient.swift */; };
 		683D5C061A36C74900019906 /* Step.swift in Sources */ = {isa = PBXBuildFile; fileRef = 683D5C051A36C74900019906 /* Step.swift */; };
-		6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */; };
+		6849973F1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */; };
 		68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDD1A24970E0085E763 /* FBHelper.swift */; };
 		68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */; };
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
@@ -31,7 +32,7 @@
 		68D71A6F1A1E4AF8004FC7DA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6E1A1E4AF8004FC7DA /* Images.xcassets */; };
 		68D71A721A1E4AF8004FC7DA /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A701A1E4AF8004FC7DA /* LaunchScreen.xib */; };
 		68D71A7E1A1E4AF8004FC7DA /* Project8Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */; };
-		68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */; };
+		68F022AB1A37521200945C3A /* P8RecipeDetailRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F022AA1A37521100945C3A /* P8RecipeDetailRecipeCell.swift */; };
 		D021A7471A1F08DF0090900E /* 1 original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021A7461A1F08DF0090900E /* 1 original.jpg */; };
 		D033396D1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */; };
 		D098BA3E1A3CFEAC0016CED1 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D098BA281A3CFEAC0016CED1 /* ELCAlbumPickerController.m */; };
@@ -71,6 +72,7 @@
 		6829C22E1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugIngredientTableViewCell.swift; path = Debug/P8DebugIngredientTableViewCell.swift; sourceTree = "<group>"; };
 		6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugStepTableViewCell.swift; path = Debug/P8DebugStepTableViewCell.swift; sourceTree = "<group>"; };
 		6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugStepTableViewController.swift; path = Debug/P8DebugStepTableViewController.swift; sourceTree = "<group>"; };
+		6839FEDE1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailStepCell.swift; path = RecipeTable/P8RecipeDetailStepCell.swift; sourceTree = "<group>"; };
 		683D5BE71A36B6BC00019906 /* P8CoreDataHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8CoreDataHelper.swift; path = Helper/P8CoreDataHelper.swift; sourceTree = "<group>"; };
 		683D5BEB1A36C32D00019906 /* Project8.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Project8.xcdatamodel; sourceTree = "<group>"; };
 		683D5BED1A36C3FF00019906 /* P8IngredientEditorTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientEditorTableViewController.swift; path = IngredientEditor/P8IngredientEditorTableViewController.swift; sourceTree = "<group>"; };
@@ -82,7 +84,7 @@
 		683D5C011A36C64C00019906 /* Recipe.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Recipe.swift; path = NSManaged/Recipe.swift; sourceTree = "<group>"; };
 		683D5C031A36C65C00019906 /* Ingredient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Ingredient.swift; path = NSManaged/Ingredient.swift; sourceTree = "<group>"; };
 		683D5C051A36C74900019906 /* Step.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = Step.swift; path = NSManaged/Step.swift; sourceTree = "<group>"; };
-		6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientDetailTableViewCell.swift; path = RecipeTable/P8IngredientDetailTableViewCell.swift; sourceTree = "<group>"; };
+		6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailIngredientCell.swift; path = RecipeTable/P8RecipeDetailIngredientCell.swift; sourceTree = "<group>"; };
 		68538EDD1A24970E0085E763 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBHelper.swift; path = Helper/FBHelper.swift; sourceTree = "<group>"; };
 		68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientsTableViewController.swift; path = ../P8IngredientsTableViewController.swift; sourceTree = "<group>"; };
 		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
@@ -96,7 +98,7 @@
 		68D71A771A1E4AF8004FC7DA /* Project8Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = Project8Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		68D71A7C1A1E4AF8004FC7DA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		68D71A7D1A1E4AF8004FC7DA /* Project8Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project8Tests.swift; sourceTree = "<group>"; };
-		68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailTableViewCell.swift; path = RecipeTable/P8RecipeDetailTableViewCell.swift; sourceTree = "<group>"; };
+		68F022AA1A37521100945C3A /* P8RecipeDetailRecipeCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailRecipeCell.swift; path = RecipeTable/P8RecipeDetailRecipeCell.swift; sourceTree = "<group>"; };
 		D021A7461A1F08DF0090900E /* 1 original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 original.jpg"; sourceTree = "<group>"; };
 		D033396B1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLMultiStepImagePickerViewController.h; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.h"; sourceTree = "<group>"; };
 		D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLMultiStepImagePickerViewController.m; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.m"; sourceTree = "<group>"; };
@@ -182,9 +184,10 @@
 			isa = PBXGroup;
 			children = (
 				683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */,
+				68F022AA1A37521100945C3A /* P8RecipeDetailRecipeCell.swift */,
+				6839FEDE1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift */,
+				6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */,
 				683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */,
-				6849973E1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift */,
-				68F022AA1A37521100945C3A /* P8RecipeDetailTableViewCell.swift */,
 				683D5BF41A36C41A00019906 /* P8RecipeTableViewCell.swift */,
 				683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */,
 			);
@@ -497,6 +500,7 @@
 				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
 				D098BA431A3CFEAC0016CED1 /* ELCImagePickerController.m in Sources */,
 				D098BA421A3CFEAC0016CED1 /* ELCConsole.m in Sources */,
+				6839FEDF1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift in Sources */,
 				D0E329AC1A38BF4E00FBDE08 /* JLIngredientTableViewCell.m in Sources */,
 				6829C2331A414AB900FAC3BA /* P8DebugStepTableViewCell.swift in Sources */,
 				683D5BF81A36C41A00019906 /* P8RecipeDetailViewController.swift in Sources */,
@@ -510,7 +514,7 @@
 				6829C2351A414B1100FAC3BA /* P8DebugStepTableViewController.swift in Sources */,
 				D0A125B41A31660900A05F0B /* JLStepTableViewCell.m in Sources */,
 				683D5C061A36C74900019906 /* Step.swift in Sources */,
-				6849973F1A38A5CF00065C2A /* P8IngredientDetailTableViewCell.swift in Sources */,
+				6849973F1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift in Sources */,
 				D033396D1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m in Sources */,
 				6829C22F1A3EDA5600FAC3BA /* P8DebugIngredientTableViewCell.swift in Sources */,
 				D098BA401A3CFEAC0016CED1 /* ELCAssetCell.m in Sources */,
@@ -519,7 +523,7 @@
 				D098BA411A3CFEAC0016CED1 /* ELCAssetTablePicker.m in Sources */,
 				6829C22D1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift in Sources */,
 				D098BA3E1A3CFEAC0016CED1 /* ELCAlbumPickerController.m in Sources */,
-				68F022AB1A37521200945C3A /* P8RecipeDetailTableViewCell.swift in Sources */,
+				68F022AB1A37521200945C3A /* P8RecipeDetailRecipeCell.swift in Sources */,
 				D0E329B01A38C02C00FBDE08 /* UIImage+JLUtilities.m in Sources */,
 				683D5C021A36C64C00019906 /* Recipe.swift in Sources */,
 			);

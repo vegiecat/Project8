@@ -12,6 +12,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
 
     var recipe:Recipe?
     var ingredients:[Ingredient]?
+    var steps:[Step]?
     var dataSource:P8CoreDataHelper?
     //for testing segue
     var imFrom:String = "I don't know where I'm from."
@@ -32,6 +33,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
         if dataSource != nil {
             self.recipe = dataSource!.recipeForRecipeDetail(self)
             self.ingredients = self.recipe?.ingredient.array as [Ingredient]?
+            self.steps = self.recipe?.step.array as [Step]?
         }
 
     }
@@ -50,7 +52,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
         // #warning Potentially incomplete method implementation.
         // Return the number of sections.
-        return 2
+        return 3
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -65,6 +67,10 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
             numberOfRows = self.ingredients!.count
             println("This is Section#\(section)")
         }
+        if section == 2{
+            numberOfRows = self.steps!.count
+            println("This is Section#\(section)")
+        }
 
         
         return numberOfRows
@@ -76,7 +82,7 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
         let recipe:Recipe = self.recipe!
 
         if indexPath.section == 0{
-            let recipeCell:P8RecipeDetailTableViewCell = tableView.dequeueReusableCellWithIdentifier("RecipeDetailCell", forIndexPath: indexPath) as P8RecipeDetailTableViewCell
+            let recipeCell:P8RecipeDetailRecipeCell = tableView.dequeueReusableCellWithIdentifier("RecipeDetailRecipeCell", forIndexPath: indexPath) as P8RecipeDetailRecipeCell
             
             
             let recipeCoverPhotoData:NSData = recipe.coverPhoto
@@ -91,12 +97,12 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
             recipeCell.recipeName.text = recipe.name
             cell = recipeCell
             //manually setting the row height, should be a smarter way
-            self.tableView.rowHeight = 311
+            self.tableView.rowHeight = 310
 
         }
         if indexPath.section == 1{
             
-            var ingredientCell = tableView.dequeueReusableCellWithIdentifier("IngredientDetailCell", forIndexPath: indexPath) as P8IngredientDetailTableViewCell
+            var ingredientCell = tableView.dequeueReusableCellWithIdentifier("RecipeDetailIngredientCell", forIndexPath: indexPath) as P8RecipeDetailIngredientCell
             
             let ingredients = self.ingredients
             let ingredientText = ingredients![indexPath.row].name
@@ -108,7 +114,20 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
             self.tableView.rowHeight = 50
 
         }
-        
+        if indexPath.section == 2{
+            
+            var stepCell = tableView.dequeueReusableCellWithIdentifier("RecipeDetailStepCell", forIndexPath: indexPath) as P8RecipeDetailStepCell
+            stepCell.stepText.text = self.steps![indexPath.row].stepText
+            stepCell.stepCount.text = String(indexPath.row+1)
+            
+
+            stepCell.stepImage.image = UIImage(data: steps![indexPath.row].stepImage)
+            cell=stepCell
+            //manually setting the row height, should be a smarter way
+            self.tableView.rowHeight = 420
+            
+        }
+
         
         /*
         var cell = tableView.dequeueReusableCellWithIdentifier("IngredientDetailCell", forIndexPath: indexPath) as UITableViewCell
@@ -145,6 +164,20 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
         return cell
         
     }
+    override func tableView(tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        var sectionHeader:String = "SectionName"
+        if section == 0{
+            sectionHeader = "Recipe"
+        }
+        if section == 1{
+            sectionHeader = "Ingredients"
+        }
+        if section == 2{
+            sectionHeader = "Steps"
+        }
+        return sectionHeader
+    }
+
 
     /*
     // Override to support conditional editing of the table view.

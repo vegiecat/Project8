@@ -8,7 +8,7 @@
 
 import UIKit
 
-class P8IngredientDetailTableViewCell: UITableViewCell {
+class P8RecipeDetailIngredientCell: UITableViewCell {
 
     override func awakeFromNib() {
         super.awakeFromNib()
