@@ -128,6 +128,9 @@ class P8CoreDataHelper: NSObject,
         return update()
     }
     
+    func recipeEditorDeleteRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool{
+        return deleteRecipe(recipe)
+    }
     
 
     //MARK: JLStepEditor
@@ -223,9 +226,9 @@ class P8CoreDataHelper: NSObject,
     }
 
     //MARK: deleteItems
-    func deleteRecipe(recipe:Recipe) {
+    func deleteRecipe(recipe:Recipe)->Bool {
         globalMOC.deleteObject(recipe)
-        self.update()
+        return self.update()
     }
     func deleteIngredient(ingredient:Ingredient) {
         globalMOC.deleteObject(ingredient)
@@ -404,5 +407,24 @@ class P8CoreDataHelper: NSObject,
     }
     */
 
+    func rollBack(){
+        globalMOC.rollback()
+    }
+    
+    func hasChanges()->Bool{
+        var hasChanged = false
+        if globalMOC.hasChanges{
+            hasChanged = true
+        }
+        
+        if hasChanged {
+            println("**MOC HAS Changes**")
+        }else{
+            println("**MOC NO Changes**")
+        }
+        
+        
+        return hasChanged
+    }
     
 }

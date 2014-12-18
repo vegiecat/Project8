@@ -64,6 +64,16 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         
     }
 
+    override func viewWillDisappear(animated: Bool) {
+        self.dataSource?.hasChanges()
+        self.dataSource?.rollBack()
+        println(self.recipeName.text)
+        println(self.recipeCoverPhoto.image!)
+        
+        if self.recipeName.text == "" && self.recipeCoverPhoto == nil{
+            println("Recipe not changed, delete it.")
+        }
+    }
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
@@ -127,7 +137,15 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
 
     }
 
+    @IBAction func deleteRecipe(sender: AnyObject) {
+        if dataSource != nil {
+            self.dataSource!.recipeEditorDeleteRecipe(self, recipe:self.recipe!)
+        }
+        self.navigationController?.popToRootViewControllerAnimated(true)
 
+    }
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

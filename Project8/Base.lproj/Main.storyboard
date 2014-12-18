@@ -561,7 +561,7 @@
                                     <rect key="frame" x="0.0" y="0.0" width="0.0" height="0.0"/>
                                 </variation>
                             </textView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-fH-hAK">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="1 original.jpg" translatesAutoresizingMaskIntoConstraints="NO" id="GyV-fH-hAK">
                                 <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="75" y="72" width="240" height="240"/>
@@ -575,18 +575,6 @@
                                     <rect key="frame" x="75" y="329" width="250" height="30"/>
                                 </variation>
                             </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-XH-Gmc">
-                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Add">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="285" y="389" width="30" height="30"/>
-                                </variation>
-                                <connections>
-                                    <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="cMr-Tc-aRL"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-zV-zp4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Ingredients">
@@ -611,6 +599,30 @@
                                     <segue destination="39K-Y1-Pra" kind="show" identifier="showStepEditor" id="cX7-i0-hF9"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ciH-oJ-92Y">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Delete">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="178" y="427" width="44" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="deleteRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="mQB-RU-Hdd"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-XH-Gmc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Add / Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="427" width="93" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="cMr-Tc-aRL"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <variation key="default">
@@ -618,9 +630,10 @@
                                 <exclude reference="Yxs-UD-KtP"/>
                                 <exclude reference="GyV-fH-hAK"/>
                                 <exclude reference="pue-Hd-1aA"/>
-                                <exclude reference="ksT-XH-Gmc"/>
                                 <exclude reference="aMx-zV-zp4"/>
                                 <exclude reference="cxC-UP-0V1"/>
+                                <exclude reference="ciH-oJ-92Y"/>
+                                <exclude reference="ksT-XH-Gmc"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -628,9 +641,10 @@
                                 <include reference="Yxs-UD-KtP"/>
                                 <include reference="GyV-fH-hAK"/>
                                 <include reference="pue-Hd-1aA"/>
-                                <include reference="ksT-XH-Gmc"/>
                                 <include reference="aMx-zV-zp4"/>
                                 <include reference="cxC-UP-0V1"/>
+                                <include reference="ciH-oJ-92Y"/>
+                                <include reference="ksT-XH-Gmc"/>
                             </mask>
                         </variation>
                     </view>
@@ -917,6 +931,11 @@
                                 <segue destination="RxL-9u-qeT" kind="show" id="lM0-HK-sEy"/>
                             </connections>
                         </barButtonItem>
+                        <barButtonItem title="Dummy" id="asu-EV-oee">
+                            <connections>
+                                <action selector="dummy:" destination="xjW-zN-o2t" id="w3s-53-VKQ"/>
+                            </connections>
+                        </barButtonItem>
                     </toolbarItems>
                     <navigationItem key="navigationItem" id="Hcj-lG-o14">
                         <barButtonItem key="rightBarButtonItem" systemItem="add" id="NRH-QX-wNB">
@@ -962,7 +981,7 @@
         <image name="dummy" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="ONr-8u-GZT"/>
-        <segue reference="s6J-x7-wnH"/>
+        <segue reference="A3g-0y-hDc"/>
+        <segue reference="f6c-Kh-4CV"/>
     </inferredMetricsTieBreakers>
 </document>

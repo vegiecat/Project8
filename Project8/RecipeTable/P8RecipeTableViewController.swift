@@ -21,6 +21,8 @@ class P8RecipeTableViewController: UITableViewController {
     let dataSource = P8CoreDataHelper()
     let delegate = P8RecipeDetailTableViewController()
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -41,6 +43,8 @@ class P8RecipeTableViewController: UITableViewController {
         println("viewAppeared")
         self.loadData()
         self.navigationController?.toolbarHidden = false
+        self.dataSource.hasChanges()
+
     }
 
     func loadData(){
@@ -157,5 +161,18 @@ class P8RecipeTableViewController: UITableViewController {
 
     }
     
+    @IBAction func dummy(sender: UIBarButtonItem) {
+        /*
+        var dummy:Recipe = Recipe()
+        var dummyStep1:Step = Step()
+        var dummyIngredient1 = Ingredient()
+        var dummyStepArray = [dummyStep1]
+        var dummyIngredientArray = [dummyIngredient1]
+        dummy.name = "Delicious Dummy"
+        dummy.ingredient = NSOrderedSet(array:dummyIngredientArray)
+        dummy.step = NSOrderedSet(array:dummyStepArray)
+*/
+    }
+
     
 }
