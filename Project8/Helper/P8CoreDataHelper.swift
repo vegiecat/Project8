@@ -12,7 +12,8 @@ import CoreData
 class P8CoreDataHelper: NSObject,
     P8RecipeEditorDataSource,
     JLStepEditorTableViewControllerDatasource,
-    JLIngredientEditorTableViewControllerDatasource{
+    JLIngredientEditorTableViewControllerDatasource,
+    JLMultiStepImagePickerViewControllerDatasource{
     
     var recipeOfInterest:Recipe?
     let globalMOC = managedObjectContext()
@@ -169,7 +170,23 @@ class P8CoreDataHelper: NSObject,
         checkCurrentRecipe()
     }
     
-
+    //MARK: JLMultiImageStepEditor
+    //called when it needs a new step to assign a selected image
+    func newStepForMultiStepImagePicker(picker: JLMultiStepImagePickerViewController!) -> Step! {
+        println("----newStepForMultiStepImagePicker----")
+        checkCurrentRecipe()
+        let anotherStep = newStep()
+        anotherStep.recipe = self.recipeOfInterest!
+        return anotherStep
+    }
+    //called when user has finished image selection; returns an array of steps each assigned with an image selected by user
+    func multiStepImagePicker(picker: JLMultiStepImagePickerViewController!, didFinishCreatingSteps steps: [AnyObject]!) {
+        println("----multiStepImagePicker didFinishCreatingSteps----")
+        self.recipeOfInterest?.step = NSOrderedSet(array:steps)
+        update()
+        checkCurrentRecipe()
+    }
+    
     //MARK: JLIngredientEditor
     //called when ingredient editor is getting setup
     func ingredientsArrayForIngredientEditor(editor: JLIngredientEditorTableViewController!) -> [AnyObject]! {
@@ -408,6 +425,7 @@ class P8CoreDataHelper: NSObject,
     */
 
     func rollBack(){
+        println("MOC--->RollBack")
         globalMOC.rollback()
     }
     

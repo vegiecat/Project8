@@ -512,7 +512,7 @@
         <!--Multi Step Image Picker View Controller-->
         <scene sceneID="vid-zg-LFz">
             <objects>
-                <viewController id="Vgt-bR-7Jn" customClass="JLMultiStepImagePickerViewController" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MultipleImagePicker" id="Vgt-bR-7Jn" customClass="JLMultiStepImagePickerViewController" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="OgF-Wk-7Xi"/>
                         <viewControllerLayoutGuide type="bottom" id="jYX-v7-brJ"/>
@@ -575,13 +575,25 @@
                                     <rect key="frame" x="75" y="329" width="250" height="30"/>
                                 </variation>
                             </textField>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-XH-Gmc">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Add / Update">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="427" width="93" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="cMr-Tc-aRL"/>
+                                </connections>
+                            </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-zV-zp4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
                                 <state key="normal" title="Ingredients">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="157" y="389" width="77" height="30"/>
+                                    <rect key="frame" x="227" y="389" width="77" height="30"/>
                                 </variation>
                                 <connections>
                                     <segue destination="TSm-Cg-Prd" kind="show" identifier="showIngredientEditor" id="bom-SD-KUS"/>
@@ -611,16 +623,16 @@
                                     <action selector="deleteRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="mQB-RU-Hdd"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ksT-XH-Gmc">
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HcA-Dg-bZA">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
-                                <state key="normal" title="Add / Update">
+                                <state key="normal" title="StepsM">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <variation key="widthClass=compact" fixedFrame="YES">
-                                    <rect key="frame" x="49" y="427" width="93" height="30"/>
+                                    <rect key="frame" x="150" y="389" width="53" height="30"/>
                                 </variation>
                                 <connections>
-                                    <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="cMr-Tc-aRL"/>
+                                    <segue destination="Vgt-bR-7Jn" kind="show" identifier="I" id="b6S-my-Opw"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -630,10 +642,11 @@
                                 <exclude reference="Yxs-UD-KtP"/>
                                 <exclude reference="GyV-fH-hAK"/>
                                 <exclude reference="pue-Hd-1aA"/>
+                                <exclude reference="ksT-XH-Gmc"/>
                                 <exclude reference="aMx-zV-zp4"/>
                                 <exclude reference="cxC-UP-0V1"/>
                                 <exclude reference="ciH-oJ-92Y"/>
-                                <exclude reference="ksT-XH-Gmc"/>
+                                <exclude reference="HcA-Dg-bZA"/>
                             </mask>
                         </variation>
                         <variation key="widthClass=compact">
@@ -641,10 +654,11 @@
                                 <include reference="Yxs-UD-KtP"/>
                                 <include reference="GyV-fH-hAK"/>
                                 <include reference="pue-Hd-1aA"/>
+                                <include reference="ksT-XH-Gmc"/>
                                 <include reference="aMx-zV-zp4"/>
                                 <include reference="cxC-UP-0V1"/>
                                 <include reference="ciH-oJ-92Y"/>
-                                <include reference="ksT-XH-Gmc"/>
+                                <include reference="HcA-Dg-bZA"/>
                             </mask>
                         </variation>
                     </view>

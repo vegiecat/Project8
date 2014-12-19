@@ -254,6 +254,7 @@
 			children = (
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
 				6829C22B1A3E876300FAC3BA /* Debug */,
+				D033396E1A3BDF6F003B6DCC /* JL Multi Impage Picker */,
 				D0E329AD1A38BFFC00FBDE08 /* JLUtilities */,
 				68F022A91A374E4B00945C3A /* JLIngredientEditor */,
 				D0A125A91A31660900A05F0B /* JL Step Editor */,
@@ -271,7 +272,6 @@
 				68D71A621A1E4AF8004FC7DA /* Supporting Files */,
 				D0C1AAD01A2D9796001B7FB6 /* RecipeEditorViewController.swift */,
 				D0A126431A31965800A05F0B /* TemplateTableViewController.swift */,
-				D033396E1A3BDF6F003B6DCC /* JL Multi Impage Picker */,
 			);
 			path = Project8;
 			sourceTree = "<group>";

@@ -65,8 +65,26 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
     }
 
     override func viewWillDisappear(animated: Bool) {
-        self.dataSource?.hasChanges()
-        self.dataSource?.rollBack()
+        
+        /*
+        if ([self.navigationController.viewControllers indexOfObject:self]==NSNotFound) {
+            // Navigation button was pressed. Do some stuff
+            [self.navigationController popViewControllerAnimated:NO];
+        }
+        */
+        
+        
+        //Detecting if backbutton is pressed, if yes, then rollback
+        var VCs = self.navigationController?.viewControllers as[UIViewController]
+        let selfInStackfound = find(VCs,self)
+        if selfInStackfound == nil{
+            println("backButtonPressed\(selfInStackfound)")
+            self.dataSource?.hasChanges()
+            //self.dataSource?.rollBack()
+        }else{
+            println("otherButtonPressed\(selfInStackfound)")
+        }
+        
         println(self.recipeName.text)
         println(self.recipeCoverPhoto.image!)
         
@@ -117,7 +135,11 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         return newImage
     }
 
-    
+    //Not Being Used Right Now
+    @IBAction func multipleImagePicker(sender: AnyObject) {
+        let multipleImagePickerVC = self.storyboard?.instantiateViewControllerWithIdentifier("MultipleImagePicker") as UIViewController
+        showViewController(multipleImagePickerVC, sender: sender)
+    }
     
     @IBAction func addUpdateRecipe(sender: AnyObject) {
         
@@ -168,6 +190,13 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
             stepEditor.datasource = self.dataSource
             stepEditor.imFrom = "I came from Recipe Editor"
 
+        }
+
+        if segue.identifier == "showMultiImageSelector" {
+            let multiImageSelector = segue.destinationViewController as JLMultiStepImagePickerViewController
+            multiImageSelector.pickerDatasource = self.dataSource
+            //multiImageSelector.imFrom = "I came from Recipe Editor"
+            
         }
 
         
