@@ -84,8 +84,9 @@
     for (UIImage *anImage in images) {
         if (anImage) {
             Step *newStep = [self createStepFromImage:anImage]; //if datasource not implemented, new step will be a nil
+            NSLog(@"step added = %@",newStep);
             if (newStep) {
-                [stepsContainer addObject:anImage];
+                [stepsContainer addObject:newStep];
             }
         }
     }
@@ -140,6 +141,7 @@
         //asign it to our step
         NSData *imgData = [UIImage imageDataFromImage:image scaledToSize:CGSizeMake(320.0, 320.0)];
         newStep.stepImage = imgData;
+        newStep.stepText = @"";
     }
     
     return newStep;
