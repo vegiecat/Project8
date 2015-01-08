@@ -80,7 +80,7 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         if selfInStackfound == nil{
             println("backButtonPressed\(selfInStackfound)")
             self.dataSource?.hasChanges()
-            //self.dataSource?.rollBack()
+            self.dataSource?.rollBack()
         }else{
             println("otherButtonPressed\(selfInStackfound)")
         }
