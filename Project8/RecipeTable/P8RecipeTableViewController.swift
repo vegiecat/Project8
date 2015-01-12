@@ -153,6 +153,9 @@ class P8RecipeTableViewController: UITableViewController {
             recipeCreateViewController.imFrom = "I came from Main Recipe Page"
             recipeCreateViewController.dataSource = self.dataSource
             self.dataSource.addNewRecipe()
+            
+            recipeCreateViewController.title = "Add Recipe"
+            
         } else if segue.identifier == "showRecipeDetail" {
             let recipeController = segue.destinationViewController as P8RecipeDetailTableViewController
             recipeController.imFrom = "I came from Main Recipe Page"
