@@ -15,7 +15,7 @@ protocol P8RecipeEditorDataSource {
     func recipeEditorDidUpdateRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool
 }
 
-class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate {
+class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
 
     
     
@@ -29,8 +29,13 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
     //for testing segue
     var imFrom:String = "I don't know where I'm from."
     
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //set up delegate of text field so we can dismiss keyboard when user taps done
+        self.recipeName.delegate = self
         
         //for testing segue
         println(self.imFrom)
@@ -167,6 +172,12 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
 
     }
     
+    //MARK: Textfield Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+
     
     // MARK: - Navigation
 
