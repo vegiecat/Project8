@@ -26,6 +26,7 @@ class P8RecipeTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = "My Recipes"
         //Regiester the cell to return the cell of the correct type.
         //tableView.registerClass(P8RecipeTableViewCell.self,forCellReuseIdentifier: "RecipeCell")
 
