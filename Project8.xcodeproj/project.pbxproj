@@ -35,6 +35,7 @@
 		68F022AB1A37521200945C3A /* P8RecipeDetailRecipeCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68F022AA1A37521100945C3A /* P8RecipeDetailRecipeCell.swift */; };
 		D021A7471A1F08DF0090900E /* 1 original.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D021A7461A1F08DF0090900E /* 1 original.jpg */; };
 		D033396D1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */; };
+		D082DF5E1A647E9400FF6A66 /* JLImagePickerViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = D082DF5D1A647E9400FF6A66 /* JLImagePickerViewController.m */; };
 		D098BA3E1A3CFEAC0016CED1 /* ELCAlbumPickerController.m in Sources */ = {isa = PBXBuildFile; fileRef = D098BA281A3CFEAC0016CED1 /* ELCAlbumPickerController.m */; };
 		D098BA3F1A3CFEAC0016CED1 /* ELCAsset.m in Sources */ = {isa = PBXBuildFile; fileRef = D098BA2A1A3CFEAC0016CED1 /* ELCAsset.m */; };
 		D098BA401A3CFEAC0016CED1 /* ELCAssetCell.m in Sources */ = {isa = PBXBuildFile; fileRef = D098BA2C1A3CFEAC0016CED1 /* ELCAssetCell.m */; };
@@ -102,6 +103,8 @@
 		D021A7461A1F08DF0090900E /* 1 original.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "1 original.jpg"; sourceTree = "<group>"; };
 		D033396B1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLMultiStepImagePickerViewController.h; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.h"; sourceTree = "<group>"; };
 		D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLMultiStepImagePickerViewController.m; path = "JL Multi Step Image Picker/JLMultiStepImagePickerViewController.m"; sourceTree = "<group>"; };
+		D082DF5C1A647E9400FF6A66 /* JLImagePickerViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = JLImagePickerViewController.h; path = "JL Image Picker/JLImagePickerViewController.h"; sourceTree = "<group>"; };
+		D082DF5D1A647E9400FF6A66 /* JLImagePickerViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = JLImagePickerViewController.m; path = "JL Image Picker/JLImagePickerViewController.m"; sourceTree = "<group>"; };
 		D098BA271A3CFEAC0016CED1 /* ELCAlbumPickerController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAlbumPickerController.h; sourceTree = "<group>"; };
 		D098BA281A3CFEAC0016CED1 /* ELCAlbumPickerController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ELCAlbumPickerController.m; sourceTree = "<group>"; };
 		D098BA291A3CFEAC0016CED1 /* ELCAsset.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ELCAsset.h; sourceTree = "<group>"; };
@@ -252,6 +255,7 @@
 		68D71A611A1E4AF8004FC7DA /* Project8 */ = {
 			isa = PBXGroup;
 			children = (
+				D082DF5B1A647E6900FF6A66 /* JL Single Image Picker */,
 				68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */,
 				6829C22B1A3E876300FAC3BA /* Debug */,
 				D033396E1A3BDF6F003B6DCC /* JL Multi Impage Picker */,
@@ -322,6 +326,15 @@
 				D033396C1A3BDF5B003B6DCC /* JLMultiStepImagePickerViewController.m */,
 			);
 			name = "JL Multi Impage Picker";
+			sourceTree = "<group>";
+		};
+		D082DF5B1A647E6900FF6A66 /* JL Single Image Picker */ = {
+			isa = PBXGroup;
+			children = (
+				D082DF5C1A647E9400FF6A66 /* JLImagePickerViewController.h */,
+				D082DF5D1A647E9400FF6A66 /* JLImagePickerViewController.m */,
+			);
+			name = "JL Single Image Picker";
 			sourceTree = "<group>";
 		};
 		D098BA261A3CFEAC0016CED1 /* ELCImagePicker */ = {
@@ -497,6 +510,7 @@
 				683D5BF51A36C41A00019906 /* P8RecipeTableViewController.swift in Sources */,
 				683D5BF91A36C41A00019906 /* P8RecipeDetailTableViewController.swift in Sources */,
 				D0A125B21A31660900A05F0B /* JLMultiLineTextEntryViewController.m in Sources */,
+				D082DF5E1A647E9400FF6A66 /* JLImagePickerViewController.m in Sources */,
 				D0C1AAD11A2D9796001B7FB6 /* RecipeEditorViewController.swift in Sources */,
 				D098BA431A3CFEAC0016CED1 /* ELCImagePickerController.m in Sources */,
 				D098BA421A3CFEAC0016CED1 /* ELCConsole.m in Sources */,

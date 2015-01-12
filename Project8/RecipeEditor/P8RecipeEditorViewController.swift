@@ -15,9 +15,7 @@ protocol P8RecipeEditorDataSource {
     func recipeEditorDidUpdateRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool
 }
 
-class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDelegate,UINavigationControllerDelegate,UITextFieldDelegate {
-
-    
+class P8RecipeEditorViewController: JLImagePickerViewController,UITextFieldDelegate {
     
     @IBOutlet var recipeCoverPhoto: UIImageView!
     @IBOutlet var recipeName: UITextField!
@@ -29,8 +27,7 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
     //for testing segue
     var imFrom:String = "I don't know where I'm from."
     
-    
-    
+    //MARK: VC Life Cycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -104,10 +101,14 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
     
     //MARK: Image Process
     func chooseRecipeCoverPhoto(recognizer:UITapGestureRecognizer){
+        self.handleCameraAndPickerPresentation()
+        
+        /* OLD
         let imagePicker:UIImagePickerController = UIImagePickerController()
         imagePicker.delegate = self
         imagePicker.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
         self.presentViewController(imagePicker, animated: true, completion: nil)
+        */
     }
     
     func chooseImage(recognizer:UITapGestureRecognizer){
@@ -117,6 +118,13 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         self.presentViewController(imagePicker, animated: true, completion: nil)
     }
 
+    override func didFinishPickingImage(pickedImage: UIImage!) {
+        
+        recipeCoverPhoto.image = pickedImage
+        
+    }
+    
+    /*
     func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: NSDictionary) {
         let pickedImage:UIImage = info.objectForKey(UIImagePickerControllerOriginalImage) as UIImage
         picker.dismissViewControllerAnimated(true, completion: nil)
@@ -139,7 +147,17 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
         UIGraphicsEndImageContext()
         return newImage
     }
+    */
 
+    
+    //MARK: Textfield Delegate
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        textField.resignFirstResponder()
+        return true
+    }
+    
+
+    
     //Not Being Used Right Now
     @IBAction func multipleImagePicker(sender: AnyObject) {
         let multipleImagePickerVC = self.storyboard?.instantiateViewControllerWithIdentifier("MultipleImagePicker") as UIViewController
@@ -172,13 +190,6 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
 
     }
     
-    //MARK: Textfield Delegate
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
-        textField.resignFirstResponder()
-        return true
-    }
-
-    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
@@ -209,12 +220,5 @@ class P8RecipeEditorViewController: UIViewController,UIImagePickerControllerDele
             //multiImageSelector.imFrom = "I came from Recipe Editor"
             
         }
-
-        
-        
-
-
     }
-
-
 }
