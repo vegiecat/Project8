@@ -2,6 +2,7 @@
 Project8/Base.lproj/Main.storyboard
 
 # Xcode
+*.storyboard
 build/*
 *.pbxuser
 !default.pbxuser
