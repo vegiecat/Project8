@@ -17,42 +17,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-
-        FBLoginView.self
-        FBProfilePictureView.self
         
-        let permission = ["public_profile"];
-
-        
-        if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
-            FBSession.openActiveSessionWithReadPermissions(
-                permission,
-                allowLoginUI: false,
-                completionHandler: {(session, state, error) -> Void in
-                self.sessionStateChanged(session, state: state, error: error)
-            })
-        }
-
+        NSUserDefaults.standardUserDefaults().setBool(Bool(), forKey: "P8DataCoreHelperDebugMode")
         
         return true
     }
     
-    
-    func sessionStateChanged(session:FBSession, state:FBSessionState, error:NSError?) {
-        
-    }
 
     
-
-    func application(application: UIApplication,
-        openURL url: NSURL,
-        sourceApplication: NSString?,
-        annotation: AnyObject) -> Bool {
-            
-            var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
-            return wasHandled
-            
-    }
 
     func applicationWillResignActive(application: UIApplication) {
         // Sent when the application is about to move from active to inactive state. This can occur for certain types of temporary interruptions (such as an incoming phone call or SMS message) or when the user quits the application and it begins the transition to the background state.
