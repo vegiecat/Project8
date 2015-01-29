@@ -268,13 +268,13 @@
                                             <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                             <nil key="highlightedColor"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="40" y="266" width="240" height="21"/>
+                                                <rect key="frame" x="40" y="0.0" width="240" height="21"/>
                                             </variation>
                                         </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="2M2-rP-Bdu">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="0.0" y="8" width="320" height="320"/>
+                                                <rect key="frame" x="0.0" y="18" width="320" height="320"/>
                                             </variation>
                                         </imageView>
                                     </subviews>
@@ -361,6 +361,13 @@
                             <outlet property="delegate" destination="CC8-Gb-xzn" id="Z6D-Ef-WRA"/>
                         </connections>
                     </tableView>
+                    <toolbarItems>
+                        <barButtonItem title="Post to FB" id="yX0-xW-kij">
+                            <connections>
+                                <action selector="publishRecipeToFB:" destination="CC8-Gb-xzn" id="iZa-UM-Xl1"/>
+                            </connections>
+                        </barButtonItem>
+                    </toolbarItems>
                     <navigationItem key="navigationItem" id="2Td-pI-uXM">
                         <barButtonItem key="rightBarButtonItem" systemItem="edit" id="nd7-pJ-PHg">
                             <connections>
@@ -371,7 +378,7 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QJu-zw-GJw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-310.5" y="1208"/>
+            <point key="canvasLocation" x="487.5" y="1208"/>
         </scene>
         <!--Tab Bar Controller-->
         <scene sceneID="XzB-31-QIK">
@@ -391,6 +398,87 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eXs-qA-FbF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1828.5" y="1133"/>
+        </scene>
+        <!--Debug Face Book Table View-->
+        <scene sceneID="wKB-F1-z2D">
+            <objects>
+                <viewController id="wjl-cN-1sm" customClass="P8DebugFaceBookTableView" customModule="Project8" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="sSf-bH-1Su"/>
+                        <viewControllerLayoutGuide type="bottom" id="U2c-EB-4ik"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Nvg-Tr-5Jb">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TSK-l3-fxi">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Test Post to FB">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="108" y="169" width="105" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="albumPostTest:" destination="wjl-cN-1sm" eventType="touchUpInside" id="wW4-4G-zhb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="P8G-C5-DTj">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Log in with FB">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="49" y="113" width="215" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="buttonTouched:" destination="wjl-cN-1sm" eventType="touchUpInside" id="0bl-4M-wcJ"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="9oC-Yd-mv2">
+                                <rect key="frame" x="-23" y="-15" width="46" height="30"/>
+                                <state key="normal" title="Check FB Login Status">
+                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <variation key="widthClass=compact" fixedFrame="YES">
+                                    <rect key="frame" x="81" y="215" width="158" height="30"/>
+                                </variation>
+                                <connections>
+                                    <action selector="btnCheckForFBPublishPermissions:" destination="wjl-cN-1sm" eventType="touchUpInside" id="kxK-e2-CVJ"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <variation key="default">
+                            <mask key="subviews">
+                                <exclude reference="TSK-l3-fxi"/>
+                                <exclude reference="P8G-C5-DTj"/>
+                                <exclude reference="9oC-Yd-mv2"/>
+                            </mask>
+                        </variation>
+                        <variation key="widthClass=compact">
+                            <mask key="subviews">
+                                <include reference="TSK-l3-fxi"/>
+                                <include reference="P8G-C5-DTj"/>
+                                <include reference="9oC-Yd-mv2"/>
+                            </mask>
+                        </variation>
+                    </view>
+                    <navigationItem key="navigationItem" id="gMH-8j-hqX">
+                        <barButtonItem key="leftBarButtonItem" title="Done" id="fod-GI-vUr">
+                            <connections>
+                                <action selector="doneAction:" destination="wjl-cN-1sm" id="a1Z-U5-8p3"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
+                    <value key="contentSizeForViewInPopover" type="size" width="320" height="519"/>
+                    <connections>
+                        <outlet property="FBBtnLoginLogout" destination="P8G-C5-DTj" id="ulY-gh-OyT"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="3PZ-Y7-tL1" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-430.5" y="1133"/>
         </scene>
         <!--Steps-->
         <scene sceneID="ELa-uY-fE8">
@@ -894,15 +982,6 @@
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="Zf2-Si-4OJ" id="scG-cP-VSR">
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-dB-Met">
-                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
-                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            <nil key="highlightedColor"/>
-                                            <variation key="widthClass=compact" fixedFrame="YES">
-                                                <rect key="frame" x="246" y="104" width="154" height="21"/>
-                                            </variation>
-                                        </label>
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="dummy" translatesAutoresizingMaskIntoConstraints="NO" id="MHg-6S-ClR">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                             <variation key="widthClass=compact" fixedFrame="YES">
@@ -912,19 +991,28 @@
                                         <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="SMU-Ni-vJr">
                                             <rect key="frame" x="0.0" y="0.0" width="240" height="128"/>
                                         </imageView>
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Recipe Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="7tU-dB-Met">
+                                            <rect key="frame" x="0.0" y="-21" width="42" height="21"/>
+                                            <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                            <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                            <nil key="highlightedColor"/>
+                                            <variation key="widthClass=compact" fixedFrame="YES">
+                                                <rect key="frame" x="8" y="208" width="154" height="21"/>
+                                            </variation>
+                                        </label>
                                     </subviews>
                                     <variation key="default">
                                         <mask key="subviews">
-                                            <exclude reference="7tU-dB-Met"/>
                                             <exclude reference="MHg-6S-ClR"/>
                                             <exclude reference="SMU-Ni-vJr"/>
+                                            <exclude reference="7tU-dB-Met"/>
                                         </mask>
                                     </variation>
                                     <variation key="widthClass=compact">
                                         <mask key="subviews">
-                                            <include reference="7tU-dB-Met"/>
                                             <include reference="MHg-6S-ClR"/>
                                             <exclude reference="SMU-Ni-vJr"/>
+                                            <include reference="7tU-dB-Met"/>
                                         </mask>
                                     </variation>
                                 </tableViewCellContentView>
@@ -948,6 +1036,11 @@
                         <barButtonItem title="Dummy" id="asu-EV-oee">
                             <connections>
                                 <action selector="dummy:" destination="xjW-zN-o2t" id="w3s-53-VKQ"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem title="FB" id="Hsc-Do-qrz">
+                            <connections>
+                                <segue destination="nLf-CP-gYf" kind="presentation" id="MEB-Pd-06l"/>
                             </connections>
                         </barButtonItem>
                     </toolbarItems>
@@ -989,13 +1082,31 @@
             </objects>
             <point key="canvasLocation" x="-1828.5" y="462"/>
         </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="1Xc-BQ-AzS">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="nLf-CP-gYf" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="wvm-BU-8aw">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="wjl-cN-1sm" kind="relationship" relationship="rootViewController" id="gxT-JS-4TT"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YHh-sd-kDh" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1228.5" y="1133"/>
+        </scene>
     </scenes>
     <resources>
         <image name="1 original.jpg" width="631" height="471"/>
         <image name="dummy" width="75" height="75"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="A3g-0y-hDc"/>
-        <segue reference="f6c-Kh-4CV"/>
+        <segue reference="s6J-x7-wnH"/>
+        <segue reference="ONr-8u-GZT"/>
     </inferredMetricsTieBreakers>
 </document>

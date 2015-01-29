@@ -15,15 +15,167 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
 
+    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: NSDictionary?) -> Bool {
+        // Whenever a person opens the app, check for a cached session
+        if FBSession.activeSession().state == FBSessionState.CreatedTokenLoaded {
+            println("Found a cached FB session")
+            
+            // If there's one, just open the session silently, without showing the user the login UI
+            FBSession.openActiveSessionWithReadPermissions(["public_profile"], allowLoginUI: false, completionHandler: {
+                (session, state, error) -> Void in
+                // Handler for session state changes
+                // This method will be called EACH time the session state changes,
+                // also for intermediate states and NOT just when the session open
+                self.sessionStateChanged(session, state: state, error: error)
+            })
+        }else{
+            // If there's no cached session, we will show a login button
 
+        }
+        return true
+    }
+
+    func sessionStateChanged(session : FBSession, state : FBSessionState, error : NSError?){
+        // If the session was opened successfully
+        if  state == FBSessionState.Open && error == nil{
+            println("FB Session Opened")
+            // Show the user the logged-in UI
+            self.userLoggedIn()
+            return
+        }
+        // If the session closed
+        if state == FBSessionState.Closed || state == FBSessionState.ClosedLoginFailed{
+            println("FB Session Closed")
+            // Show the user the logged-out UI
+            self.userLoggedOut()
+            return
+        }
+        
+        // Handle errors
+        if error != nil{
+            println("FB error")
+            var alertText:String
+            var alerTitle:String
+            // If the error requires people using an app to make an action outside of the app in order to recover
+            if FBErrorUtility.shouldNotifyUserForError(error) == true{
+                alerTitle = "Something in FB Login went wrong"
+                alertText = FBErrorUtility.userMessageForError(error)
+                self.showMessage(alertText, withTitle: alerTitle)
+            }else {
+                // If the user cancelled login, do nothing
+                if FBErrorUtility.errorCategoryForError(error) == FBErrorCategory.UserCancelled{
+                    println("User canceled FB login")
+                
+                // Handle session closures that happen outside of the app
+                }else if FBErrorUtility.errorCategoryForError(error) == FBErrorCategory.AuthenticationReopenSession{
+                    alerTitle = "FB Session Error"
+                    alertText = "Your current FB session is no longer valid. Please log in again."
+                    self.showMessage(alertText, withTitle: alerTitle)
+
+                // For simplicity, here we just show a generic message for all other errors
+                // We can learn how to handle other errors using our guide: https://developers.facebook.com/docs/ios/errors
+                }else{
+                    //Get more error information from the error
+                    if let info = error!.userInfo{
+                        if let dict1 = info["com.facebook.sdk:ParsedJSONResponseKey"] as? NSDictionary {
+                            if let dict2 = dict1["body"] as? NSDictionary {
+                                if let errorInformation = dict2["error"] as? NSDictionary {
+                                    if let msg:AnyObject = errorInformation["message"] {
+                                        println("errormessage: \(msg)")
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            // Clear this token
+            FBSession.activeSession().closeAndClearTokenInformation()
+            // Show the user the logged-out UI
+            self.userLoggedOut()
+        }
+
+        
+    }
+
+    func showMessage(message:String, withTitle:String){
+        //Switch to UIAlertController later
+        let alert = UIAlertView()
+        alert.title = withTitle
+        alert.message = message
+        alert.addButtonWithTitle("OK")
+        alert.show()
+    }
+    
+    
+    func userLoggedIn(){
+        
+    }
+
+    func userLoggedOut(){
+        
+    }
+    
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
         
-        NSUserDefaults.standardUserDefaults().setBool(Bool(), forKey: "P8DataCoreHelperDebugMode")
+        // Whenever a person opens the app, check for a cached session
+        
+        /*
+
+        if (FBSession.activeSession.state == FBSessionStateCreatedTokenLoaded) {
+            NSLog(@"Found a cached session");
+            // If there's one, just open the session silently, without showing the user the login UI
+            [FBSession openActiveSessionWithReadPermissions:@[@"public_profile"]
+            allowLoginUI:NO
+            completionHandler:^(FBSession *session, FBSessionState state, NSError *error) {
+            // Handler for session state changes
+            // This method will be called EACH time the session state changes,
+            // also for intermediate states and NOT just when the session open
+            [self sessionStateChanged:session state:state error:error];
+            }];
+            
+            // If there's no cached session, we will show a login button
+        } else {
+            UIButton *loginButton = [self.customLoginViewController loginButton];
+            [loginButton setTitle:@"Log in with Facebook" forState:UIControlStateNormal];
+        }
+        */
+
+        FBLoginView.self
+        FBProfilePictureView.self
+        
+        //Testing Global Variable
+        //NSUserDefaults.standardUserDefaults().setBool(Bool(), forKey: "P8DataCoreHelperDebugMode")
         
         return true
     }
     
+    
 
+    
+    // During the Facebook login flow, your app passes control to the Facebook iOS app or Facebook in a mobile browser.
+    // After authentication, your app will be called back with the session information.
+    // Override application:openURL:sourceApplication:annotation to call the FBsession object that handles the incoming URL
+    func application(application: UIApplication,
+        openURL url: NSURL,
+        sourceApplication: NSString?,
+        annotation: AnyObject) -> Bool {
+            
+            var wasHandled:Bool = FBAppCall.handleOpenURL(url, sourceApplication: sourceApplication)
+            return wasHandled
+            
+    }
+
+    
+    
+    
+    
+    
+    
+    
+    
+    
+    
     
 
     func applicationWillResignActive(application: UIApplication) {
@@ -42,6 +194,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
 
     func applicationDidBecomeActive(application: UIApplication) {
         // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
+
+        // Handle the user leaving the app while the Facebook login dialog is being shown
+        // For example: when the user presses the iOS "home" button while the login dialog is active
+        FBAppCall.handleDidBecomeActive()
     }
 
     func applicationWillTerminate(application: UIApplication) {

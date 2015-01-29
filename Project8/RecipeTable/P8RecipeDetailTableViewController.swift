@@ -14,6 +14,9 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     var ingredients:[Ingredient]?
     var steps:[Step]?
     var dataSource:P8CoreDataHelper?
+
+    let fbHelper = FBHelper()
+
     //for testing segue
     var imFrom:String = "I don't know where I'm from."
 
@@ -214,6 +217,16 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     }
     */
 
+    
+    @IBAction func publishRecipeToFB(sender: AnyObject) {
+        
+        let recipePreped = fbHelper.FBPrepareRecipeForAlbumWith(self.recipe!)
+        
+        fbHelper.FBAlbumPublish(recipePreped.0, stepsData:recipePreped.1)
+    }
+    
+    
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation

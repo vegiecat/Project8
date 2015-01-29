@@ -26,6 +26,7 @@
 		6849973F1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */; };
 		68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDD1A24970E0085E763 /* FBHelper.swift */; };
 		68538EE01A256E360085E763 /* P8IngredientsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */; };
+		685C0A711A6D040600C2360B /* P8DebugFaceBookTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 685C0A701A6D040600C2360B /* P8DebugFaceBookTableView.swift */; };
 		68CD955A1A1EFFA900E5B7E4 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */; };
 		68D71A651A1E4AF8004FC7DA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 68D71A641A1E4AF8004FC7DA /* AppDelegate.swift */; };
 		68D71A6D1A1E4AF8004FC7DA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 68D71A6B1A1E4AF8004FC7DA /* Main.storyboard */; };
@@ -88,6 +89,7 @@
 		6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8RecipeDetailIngredientCell.swift; path = RecipeTable/P8RecipeDetailIngredientCell.swift; sourceTree = "<group>"; };
 		68538EDD1A24970E0085E763 /* FBHelper.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = FBHelper.swift; path = Helper/FBHelper.swift; sourceTree = "<group>"; };
 		68538EDF1A256E360085E763 /* P8IngredientsTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8IngredientsTableViewController.swift; path = ../P8IngredientsTableViewController.swift; sourceTree = "<group>"; };
+		685C0A701A6D040600C2360B /* P8DebugFaceBookTableView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = P8DebugFaceBookTableView.swift; path = Debug/P8DebugFaceBookTableView.swift; sourceTree = "<group>"; };
 		68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "FB-BridgeHeader.h"; sourceTree = "<group>"; };
 		68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
 		68D71A5F1A1E4AF8004FC7DA /* Project8.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Project8.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -170,6 +172,7 @@
 				6829C22C1A3E87C600FAC3BA /* P8DebugIngredientTableViewController.swift */,
 				6829C2321A414AB900FAC3BA /* P8DebugStepTableViewCell.swift */,
 				6829C2341A414B1100FAC3BA /* P8DebugStepTableViewController.swift */,
+				685C0A701A6D040600C2360B /* P8DebugFaceBookTableView.swift */,
 			);
 			name = Debug;
 			sourceTree = "<group>";
@@ -227,7 +230,6 @@
 			isa = PBXGroup;
 			children = (
 				68CD95591A1EFFA900E5B7E4 /* FacebookSDK.framework */,
-				68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */,
 			);
 			name = FrameWorks;
 			path = Project8;
@@ -284,6 +286,7 @@
 			isa = PBXGroup;
 			children = (
 				D0A125BD1A31681700A05F0B /* Project8-Bridge-Header.h */,
+				68CD95571A1EFEE500E5B7E4 /* FB-BridgeHeader.h */,
 				68D71A631A1E4AF8004FC7DA /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -503,6 +506,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				683D5BE81A36B6BC00019906 /* P8CoreDataHelper.swift in Sources */,
+				685C0A711A6D040600C2360B /* P8DebugFaceBookTableView.swift in Sources */,
 				D0A125B31A31660900A05F0B /* JLStepEditorTableViewController.m in Sources */,
 				683D5C041A36C65C00019906 /* Ingredient.swift in Sources */,
 				68538EDE1A24970E0085E763 /* FBHelper.swift in Sources */,
