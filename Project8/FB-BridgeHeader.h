@@ -9,6 +9,7 @@
 #ifndef Project8_FB_BridgeHeader_h
 #define Project8_FB_BridgeHeader_h
 
+//this file is not being used right now.
 #import <FacebookSDK/FacebookSDK.h>
 
 #endif

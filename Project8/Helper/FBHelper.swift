@@ -9,9 +9,103 @@
 import Foundation
 
 
-/*
+
 
 class FBHelper{
+    
+    
+    func FBUserLoggedin() -> Bool{
+        
+        // If the session state is any of the two "open" states means, user is logged in
+        if FBSession.activeSession().state == FBSessionState.Open
+        || FBSession.activeSession().state == FBSessionState.OpenTokenExtended {
+            
+            //Present loggedin state.
+            //FBBtnLoginLogout.setTitle("Log Out", forState: UIControlState.Normal)
+            return true
+            
+        // If the session state is not any of the two "open" states meaning the user is lot logged in
+        } else {
+            
+            //Present the not-loggedin State
+            return false
+        }
+    }
+
+    
+    
+    func FBAlbumSampleTest(){
+        var albumParams = ["name": "testAlbumSWIFT", "message": "Hello World Album"] as NSDictionary
+        let stepsData = [["url": "http://dummyimage.com/640x4:3", "message": "Hello World Album Image"]]
+        var photoParams = ["url": "http://dummyimage.com/640x4:3", "message": "Hello World Album Image"] as NSDictionary
+        self.FBAlbumPublish(albumParams, stepsData: stepsData)
+    }
+    
+    
+    func FBPrepareRecipeForAlbumWith(recipe:Recipe) -> (albumData: NSDictionary,stepsData: [AnyObject]){
+        
+        let recipeCoverPhoto:UIImage? = UIImage(data: recipe.coverPhoto)?
+        var albumParam = ["name": recipe.name, "message": "Hello World Album"] as NSDictionary
+        
+        var stepsParam:[NSDictionary] = []
+        
+        for step in recipe.step.array{
+            let singleStep = step as Step
+            //let stepsPhoto:UIImage? = UIImage(data: recipe.coverPhoto)?
+            let singleStepParam = ["source": UIImage(data: singleStep.stepImage)!, "message": singleStep.stepText] as NSDictionary
+            stepsParam.append(singleStepParam)
+        }
+
+        
+//        let stepsPhoto:UIImage? = UIImage(data: recipe.coverPhoto)?
+//
+//        var photo = ["source": recipeCoverPhoto!, "message": "Hello World Album Image"] as NSDictionary
+//        photoParams.append(photo)
+
+        
+        return(albumParam, stepsParam)
+        
+    }
+
+    
+    
+    func FBAlbumPublish(albumData:NSDictionary, stepsData:NSArray){
+        //Create the album
+        FBRequestConnection.startWithGraphPath(
+            "me/albums",
+            parameters: albumData,
+            HTTPMethod:"POST",
+            completionHandler: {
+                connection, result, error in
+                println("\(result)")
+                var jsonValue = result as FBGraphObject
+                var tempID = jsonValue["id"] as String
+                println("\(tempID)")
+                
+                
+                //upload the steps
+                for singleStepParam in stepsData{
+                    FBRequestConnection.startWithGraphPath(
+                        "/\(tempID)/photos",
+                        parameters: singleStepParam as NSDictionary,
+                        HTTPMethod:"POST",
+                        completionHandler: {
+                            connection, result, error in
+                            println("\(result)")
+                            
+                        } as FBRequestHandler
+                    )
+                
+                }
+        
+            } as FBRequestHandler
+        );
+        println("I shared a new recipe on FB")
+    }
+
+    
+    
+/*
     var fbSession:FBSession?;
     init(){
         self.fbSession = nil;
@@ -143,9 +237,10 @@ class FBHelper{
             
         }
     }
+*/
 }
 
-*/
+
 
 
 

@@ -6,3 +6,4 @@
 #import "JLImagePickerViewController.h"
 
 
+#import <FacebookSDK/FacebookSDK.h>
