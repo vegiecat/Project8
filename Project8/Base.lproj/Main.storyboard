@@ -238,6 +238,7 @@
                         <viewControllerLayoutGuide type="bottom" id="lVi-fY-8mE"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="DSQ-sY-D3D">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="569"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="q5h-nr-QCL">
@@ -333,6 +334,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YvE-C0-nd7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="BEi-xb-RhZ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="pAG-O1-e8t">
@@ -383,7 +385,7 @@
             <objects>
                 <tableViewController id="CC8-Gb-xzn" customClass="P8RecipeDetailTableViewController" customModule="Project8" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="310" sectionHeaderHeight="22" sectionFooterHeight="22" id="gmI-mq-hei">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>
@@ -801,9 +803,6 @@
                                 <variation key="widthClass=compact" fixedFrame="YES">
                                     <rect key="frame" x="49" y="427" width="93" height="30"/>
                                 </variation>
-                                <connections>
-                                    <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" eventType="touchUpInside" id="cMr-Tc-aRL"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aMx-zV-zp4">
                                 <rect key="frame" x="-23" y="-15" width="46" height="30"/>
@@ -880,7 +879,18 @@
                             </mask>
                         </variation>
                     </view>
-                    <navigationItem key="navigationItem" id="N3D-p6-LZs"/>
+                    <navigationItem key="navigationItem" id="N3D-p6-LZs">
+                        <barButtonItem key="leftBarButtonItem" title="Cancel" id="wJf-qi-0kk">
+                            <connections>
+                                <action selector="cancelAction:" destination="Soe-nU-0cm" id="Fww-iv-Elj"/>
+                            </connections>
+                        </barButtonItem>
+                        <barButtonItem key="rightBarButtonItem" title="Save" id="Nen-3C-WI2">
+                            <connections>
+                                <action selector="addUpdateRecipe:" destination="Soe-nU-0cm" id="Hhj-z0-2FC"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina4"/>
                     <connections>
                         <outlet property="recipeCoverPhoto" destination="GyV-fH-hAK" id="1Za-DZ-HwY"/>
@@ -1263,31 +1273,14 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Sdu-rZ-k8O" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-553.5" y="462"/>
-        </scene>
-        <!--View Controller-->
-        <scene sceneID="DzZ-a7-Vqf">
-            <objects>
-                <viewController id="QpP-mc-OYF" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="cjU-C8-qbG"/>
-                        <viewControllerLayoutGuide type="bottom" id="A3c-ZQ-R2d"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="onQ-Rn-EcA">
-                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="6eF-rT-hHU" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
+            <point key="canvasLocation" x="-580.5" y="468"/>
         </scene>
         <!--Recipe Detail Table View Controller-->
         <scene sceneID="4TP-Ls-lLW">
             <objects>
                 <tableViewController id="xsr-TN-ecw" customClass="P8RecipeDetailTableViewController" customModule="Project8" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="310" sectionHeaderHeight="22" sectionFooterHeight="22" id="P4Z-AU-YUE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                         <prototypes>

@@ -94,10 +94,17 @@ class P8RecipeEditorViewController: JLImagePickerViewController,UITextFieldDeleg
             println("Recipe not changed, delete it.")
         }
     }
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    
+    
+    @IBAction func cancelAction(sender: AnyObject) {
+        self.dismissViewControllerAnimated(true, completion: nil)
+        
     }
+    
+    
+    
+    
+    
     
     //MARK: Image Process
     func chooseRecipeCoverPhoto(recognizer:UITapGestureRecognizer){
@@ -149,6 +156,8 @@ class P8RecipeEditorViewController: JLImagePickerViewController,UITextFieldDeleg
     }
     */
 
+    
+    
     
     //MARK: Textfield Delegate
     func textFieldShouldReturn(textField: UITextField) -> Bool {
