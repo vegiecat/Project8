@@ -190,10 +190,10 @@
 			isa = PBXGroup;
 			children = (
 				683D5BF21A36C41A00019906 /* P8RecipeDetailViewController.swift */,
+				683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */,
 				68F022AA1A37521100945C3A /* P8RecipeDetailRecipeCell.swift */,
 				6839FEDE1A4179BE008FC4F5 /* P8RecipeDetailStepCell.swift */,
 				6849973E1A38A5CF00065C2A /* P8RecipeDetailIngredientCell.swift */,
-				683D5BF31A36C41A00019906 /* P8RecipeDetailTableViewController.swift */,
 				683D5BF41A36C41A00019906 /* P8RecipeTableViewCell.swift */,
 				683D5BEF1A36C41A00019906 /* P8RecipeTableViewController.swift */,
 			);

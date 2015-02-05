@@ -15,6 +15,11 @@ class P8RecipeDetailStepCell: UITableViewCell {
     @IBOutlet var stepText: UILabel!
     @IBOutlet var stepCount: UILabel!
     
+    @IBOutlet var stepImageTemp: UIImageView!
+    @IBOutlet var stepTextTemp: UILabel!
+    @IBOutlet var stepCountTemp: UILabel!
+
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         // Initialization code

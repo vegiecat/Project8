@@ -9,7 +9,7 @@
 import UIKit
 
 protocol P8RecipeSelectionDelegate {
-    func userDidSelectRecipe()
+    func userDidSelectRecipe(recipeSelected:Recipe)
     //func ingredientsArray()->[Ingredient]
     //func newIngredient()->Ingredient
     //func recipeEditorDidUpdateRecipe(recipeEditor:P8RecipeEditorViewController,recipe:Recipe)->Bool
@@ -87,21 +87,21 @@ class P8RecipeTableViewController: UITableViewController {
         let recipeCoverPhotoData:NSData = recipe.coverPhoto
         let recipeCoverPhoto:UIImage? = UIImage(data: recipeCoverPhotoData)?
         
-        var recipeCoverPhotoFrame:CGRect = cell.recipeCoverPhoto.frame
-        recipeCoverPhotoFrame.size = CGSizeMake(75, 75)
-        cell.recipeCoverPhoto.frame = recipeCoverPhotoFrame
+//        var recipeCoverPhotoFrame:CGRect = cell.recipeCoverPhoto.frame
+//        recipeCoverPhotoFrame.size = CGSizeMake(75, 75)
+//        cell.recipeCoverPhoto.frame = recipeCoverPhotoFrame
         cell.recipeCoverPhoto.image = recipeCoverPhoto
         return cell
     }
     
     override func tableView(tableView: UITableView!, didSelectRowAtIndexPath indexPath: NSIndexPath!) {
-        println(indexPath.row)
+
         let recipeSelected = yourRecipes.objectAtIndex(indexPath.row) as Recipe
         println("i got selected \(recipeSelected.id)")
         
         dataSource.userDidSelectRecipe(recipeSelected)
         
-        performSegueWithIdentifier("showRecipeDetail", sender: self)
+        //performSegueWithIdentifier("showRecipeDetail", sender: self)
 
         //self.navigationController!.popViewControllerAnimated(true)
     }
@@ -153,7 +153,6 @@ class P8RecipeTableViewController: UITableViewController {
             
             let navControllerOfRecipeEditor = segue.destinationViewController as UINavigationController
             let recipeCreateViewController =  navControllerOfRecipeEditor.topViewController as P8RecipeEditorViewController
-
             
             //let recipeCreateViewController = segue.destinationViewController as P8RecipeEditorViewController
             recipeCreateViewController.imFrom = "I came from Main Recipe Page"
@@ -162,10 +161,16 @@ class P8RecipeTableViewController: UITableViewController {
             
             recipeCreateViewController.title = "Add Recipe"
             
+//        } else if segue.identifier == "showRecipeDetailOLD" {
+//            let recipeController = segue.destinationViewController as P8RecipeDetailTableViewController
+//            recipeController.imFrom = "I came from Main Recipe Page"
+//            recipeController.dataSource = self.dataSource
+            
         } else if segue.identifier == "showRecipeDetail" {
-            let recipeController = segue.destinationViewController as P8RecipeDetailTableViewController
+            let recipeController = segue.destinationViewController as P8RecipeDetailViewController
             recipeController.imFrom = "I came from Main Recipe Page"
             recipeController.dataSource = self.dataSource
+
         }
 
     }

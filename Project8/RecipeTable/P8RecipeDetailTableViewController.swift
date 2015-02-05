@@ -8,7 +8,7 @@
 
 import UIKit
 
-class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelectionDelegate {
+class P8RecipeDetailTableViewController: UITableViewController{
 
     var recipe:Recipe?
     var ingredients:[Ingredient]?
@@ -47,9 +47,6 @@ class P8RecipeDetailTableViewController: UITableViewController,P8RecipeSelection
     }
 
     
-    func userDidSelectRecipe(){
-        
-    }
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {

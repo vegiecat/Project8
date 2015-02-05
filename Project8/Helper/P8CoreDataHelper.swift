@@ -11,6 +11,7 @@ import CoreData
 
 class P8CoreDataHelper: NSObject,
     P8RecipeEditorDataSource,
+    P8RecipeSelectionDelegate,
     JLStepEditorTableViewControllerDatasource,
     JLIngredientEditorTableViewControllerDatasource,
     JLMultiStepImagePickerViewControllerDatasource{
@@ -81,8 +82,9 @@ class P8CoreDataHelper: NSObject,
     }
     
     //MARK: recipeDetail
-    func recipeForRecipeDetail(recipeDetail:P8RecipeDetailTableViewController)->Recipe{
-        println("----recipeForRecipeEditor----")
+    //Change the AnyObject to P8RecipeDetailViewController when finalized
+    func recipeForRecipeDetail(recipeDetail:AnyObject)->Recipe{
+        println("----recipeForRecipeDetail----")
         checkCurrentRecipe()
         return recipeOfInterest!
 
